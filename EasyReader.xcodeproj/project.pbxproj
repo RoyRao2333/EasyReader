@@ -14,6 +14,9 @@
 		B0A2A8F4277D8F1C00D1C2C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A2A8F2277D8F1C00D1C2C4 /* Main.storyboard */; };
 		B0A2A8F6277D8F1E00D1C2C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A2A8F5277D8F1E00D1C2C4 /* Assets.xcassets */; };
 		B0A2A8F9277D8F1E00D1C2C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A2A8F7277D8F1E00D1C2C4 /* LaunchScreen.storyboard */; };
+		B0A2A903277DA0DE00D1C2C4 /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B0A2A902277DA0DE00D1C2C4 /* Untitled.rtf */; };
+		B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */; };
+		B0A2A90A277DA4AF00D1C2C4 /* ERError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2A909277DA4AF00D1C2C4 /* ERError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,8 @@
 		B0A2A8F5277D8F1E00D1C2C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A2A8F8277D8F1E00D1C2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A2A8FA277D8F1E00D1C2C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0A2A902277DA0DE00D1C2C4 /* Untitled.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
+		B0A2A909277DA4AF00D1C2C4 /* ERError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +64,50 @@
 		B0A2A8E9277D8F1C00D1C2C4 /* EasyReader */ = {
 			isa = PBXGroup;
 			children = (
+				B0A2A907277DA48E00D1C2C4 /* Model */,
+				B0A2A901277D9F9100D1C2C4 /* Document */,
+				B0A2A900277D9F6B00D1C2C4 /* Support Files */,
+			);
+			path = EasyReader;
+			sourceTree = "<group>";
+		};
+		B0A2A900277D9F6B00D1C2C4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				B0A2A8EA277D8F1C00D1C2C4 /* AppDelegate.swift */,
-				B0A2A8EC277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift */,
-				B0A2A8EE277D8F1C00D1C2C4 /* DocumentViewController.swift */,
-				B0A2A8F0277D8F1C00D1C2C4 /* Document.swift */,
 				B0A2A8F2277D8F1C00D1C2C4 /* Main.storyboard */,
 				B0A2A8F5277D8F1E00D1C2C4 /* Assets.xcassets */,
 				B0A2A8F7277D8F1E00D1C2C4 /* LaunchScreen.storyboard */,
+				B0A2A902277DA0DE00D1C2C4 /* Untitled.rtf */,
 				B0A2A8FA277D8F1E00D1C2C4 /* Info.plist */,
 			);
-			path = EasyReader;
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		B0A2A901277D9F9100D1C2C4 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2A8EC277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift */,
+				B0A2A8EE277D8F1C00D1C2C4 /* DocumentViewController.swift */,
+				B0A2A8F0277D8F1C00D1C2C4 /* Document.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		B0A2A907277DA48E00D1C2C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2A908277DA49700D1C2C4 /* Error */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0A2A908277DA49700D1C2C4 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2A909277DA4AF00D1C2C4 /* ERError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +126,9 @@
 			dependencies = (
 			);
 			name = EasyReader;
+			packageProductDependencies = (
+				B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */,
+			);
 			productName = EasyReader;
 			productReference = B0A2A8E7277D8F1C00D1C2C4 /* EasyReader.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +157,9 @@
 				Base,
 			);
 			mainGroup = B0A2A8DE277D8F1C00D1C2C4;
+			packageReferences = (
+				B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+			);
 			productRefGroup = B0A2A8E8277D8F1C00D1C2C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +177,7 @@
 				B0A2A8F9277D8F1E00D1C2C4 /* LaunchScreen.storyboard in Resources */,
 				B0A2A8F6277D8F1E00D1C2C4 /* Assets.xcassets in Resources */,
 				B0A2A8F4277D8F1C00D1C2C4 /* Main.storyboard in Resources */,
+				B0A2A903277DA0DE00D1C2C4 /* Untitled.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A2A8F1277D8F1C00D1C2C4 /* Document.swift in Sources */,
+				B0A2A90A277DA4AF00D1C2C4 /* ERError.swift in Sources */,
 				B0A2A8EF277D8F1C00D1C2C4 /* DocumentViewController.swift in Sources */,
 				B0A2A8ED277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift in Sources */,
 				B0A2A8EB277D8F1C00D1C2C4 /* AppDelegate.swift in Sources */,
@@ -295,7 +343,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S6ZX968578;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EasyReader/Info.plist;
+				INFOPLIST_FILE = "EasyReader/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -325,7 +373,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S6ZX968578;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EasyReader/Info.plist;
+				INFOPLIST_FILE = "EasyReader/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -368,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0A2A8DF277D8F1C00D1C2C4 /* Project object */;
 }

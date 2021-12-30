@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SwiftyBeaver
+
+let logger = SwiftyBeaver.self
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupLogger()
+        
         return true
     }
 
@@ -55,7 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-
-
 }
 
+
+// MARK: Custom Methods -
+extension AppDelegate {
+    
+    private func setupLogger() {
+        let console = ConsoleDestination()
+        console.format = "$DHH:mm:ss$d $C$L$c: $M $X"
+        
+        logger.addDestination(console)
+    }
+}
