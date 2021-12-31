@@ -7,33 +7,47 @@
 
 import UIKit
 
+enum ERFileType: String {
+    case plain = "public.plain-text"
+    case rtf = "public.rtf"
+    case rtfd = "com.apple.rtfd"
+}
+
 class Document: UIDocument {
-    var content: NSAttributedString?
+    var content: Content = Content(content: "")
     
     override func contents(forType typeName: String) throws -> Any {
         // Encode your document with an instance of NSData or NSFileWrapper
-        guard let content = content else {
-            logger.warning("Current content is nil.")
-            return Data()
-        }
-        
-        do {
-            let archivedData = try NSKeyedArchiver.archivedData(withRootObject: content, requiringSecureCoding: false)
-            return archivedData
-        } catch {
-            return Data()
-        }
+        return content.data(ofType: contentType(for: typeName))
     }
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         // Load your document from contents
-        guard
-            let data = contents as? Data,
-            let fileContents = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSAttributedString.self, from: data)
-        else {
-            return
-        }
+        guard let data = contents as? Data else { return }
         
-        content = fileContents
+        let typeName = typeName ?? ""
+        
+        content.read(from: data, ofType: contentType(for: typeName))
+    }
+}
+
+
+// MARK: Private Methods -
+extension Document {
+    
+    private func contentType(for typeName: String) -> NSAttributedString.DocumentType {
+        switch typeName {
+            case ERFileType.rtf.rawValue:
+                return .rtf
+                
+            case ERFileType.rtfd.rawValue:
+                return .rtfd
+                
+            case ERFileType.plain.rawValue:
+                fallthrough
+                
+            default:
+                return .plain
+        }
     }
 }

@@ -25,7 +25,7 @@ class DocumentViewController: UIViewController {
         document?.open { [weak self] success in
             if success {
                 // Display the content of the document, e.g.:
-                self?.textView.attributedText = self?.document?.content
+                self?.textView.attributedText = self?.document?.content.contentString
             } else {
                 // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
                 logger.warning("Open file failed.")
@@ -44,7 +44,7 @@ class DocumentViewController: UIViewController {
 extension DocumentViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        document?.content = textView.attributedText
+        document?.content.contentString = textView.attributedText
         document?.updateChangeCount(.done)
     }
 }

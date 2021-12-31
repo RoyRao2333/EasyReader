@@ -43,7 +43,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="dismissDocumentViewController" destination="Rl9-ES-qQn" eventType="touchUpInside" id="x7Y-tv-eSN"/>
+                                    <action selector="dismissDocumentViewController" destination="M2k-L8-Olo" eventType="touchUpInside" id="TCv-NI-jxz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="mlI-wD-ggK" id="T2Z-dJ-ejI"/>
+                        <outlet property="textView" destination="mlI-wD-ggK" id="PlN-F3-diq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl9-ES-qQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
