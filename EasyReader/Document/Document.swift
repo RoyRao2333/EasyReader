@@ -23,14 +23,17 @@ class Document: UIDocument {
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         // Load your document from contents
-        guard let data = contents as? Data else {
-            logger.warning("Load file data failed.")
-            return
-        }
-        
         let typeName = typeName ?? ""
         
-        content.read(from: data, ofType: contentType(for: typeName))
+        if let data = contents as? Data {
+            content.read(from: data, ofType: contentType(for: typeName))
+        } else {
+            do {
+                try content.readRTFD(from: fileURL)
+            } catch {
+                logger.warning("Load file data failed.")
+            }
+        }
     }
 }
 

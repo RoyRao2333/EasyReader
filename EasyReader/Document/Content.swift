@@ -30,6 +30,19 @@ extension Content {
         }
     }
     
+    func readRTFD(from url: URL) throws {
+        do {
+            let attributedStr = try NSAttributedString(
+                url: url,
+                options: [.documentType: NSAttributedString.DocumentType.rtfd],
+                documentAttributes: nil
+            )
+            contentString = attributedStr
+        } catch {
+            throw error
+        }
+    }
+    
     func data(ofType fileType: NSAttributedString.DocumentType) -> Data {
         contentString.data(fileType)
     }
