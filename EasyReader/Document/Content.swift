@@ -8,7 +8,7 @@
 import UIKit
 
 class Content: NSObject {
-    var contentString: NSAttributedString = .init(string: "")
+    var contentString: NSAttributedString
     
     init(content: String, attributes: [NSAttributedString.Key: Any]? = nil) {
         contentString = NSAttributedString(string: content, attributes: attributes)
