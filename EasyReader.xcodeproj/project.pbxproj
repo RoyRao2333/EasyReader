@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B006B6CF277EFECB00092B54 /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */; };
 		B06D4A24277EDA70008D10C0 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A23277EDA70008D10C0 /* Content.swift */; };
 		B06D4A2C277EDC42008D10C0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A27277EDC42008D10C0 /* ViewExtension.swift */; };
 		B06D4A2D277EDC42008D10C0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A28277EDC42008D10C0 /* StringExtension.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardExtension.swift; sourceTree = "<group>"; };
 		B06D4A23277EDA70008D10C0 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		B06D4A27277EDC42008D10C0 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B06D4A28277EDC42008D10C0 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */,
 				B06D4A28277EDC42008D10C0 /* StringExtension.swift */,
 				B06D4A27277EDC42008D10C0 /* ViewExtension.swift */,
+				B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				B0A2A8F1277D8F1C00D1C2C4 /* Document.swift in Sources */,
 				B0A2A90A277DA4AF00D1C2C4 /* ERError.swift in Sources */,
+				B006B6CF277EFECB00092B54 /* StoryBoardExtension.swift in Sources */,
 				B0A2A8EF277D8F1C00D1C2C4 /* DocumentViewController.swift in Sources */,
 				B06D4A2C277EDC42008D10C0 /* ViewExtension.swift in Sources */,
 				B06D4A2D277EDC42008D10C0 /* StringExtension.swift in Sources */,

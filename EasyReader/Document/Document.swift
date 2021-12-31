@@ -23,7 +23,10 @@ class Document: UIDocument {
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         // Load your document from contents
-        guard let data = contents as? Data else { return }
+        guard let data = contents as? Data else {
+            logger.warning("Load file data failed.")
+            return
+        }
         
         let typeName = typeName ?? ""
         
