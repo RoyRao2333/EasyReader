@@ -5,7 +5,7 @@
 //  Created by roy on 2021/12/31.
 //
 
-import Foundation
+import UIKit
 
 class Content: NSObject {
     var contentString: NSAttributedString = .init(string: "")
@@ -20,7 +20,10 @@ extension Content {
     
     func read(from data: Data, ofType fileType: NSAttributedString.DocumentType) {
         if fileType == .plain {
-            contentString = NSAttributedString(string: String(data: data, encoding: .utf8) ?? "")
+            contentString = NSAttributedString(
+                string: String(data: data, encoding: .utf8) ?? "",
+                attributes: [.foregroundColor: UIColor.label]
+            )
         } else {
             do {
                 contentString = try NSAttributedString(data: data, documentType: .rtf)
