@@ -8,6 +8,7 @@ import UIKit
 import SwiftUI
 import Combine
 
+// MARK: View
 extension View {
     
     /**
@@ -106,7 +107,66 @@ extension View {
     }
 }
 
+
+// MARK: UIView
 extension UIView {
+    
+    /// 描边的粗细
+    @IBInspectable var borderWidth: CGFloat {
+        get { layer.borderWidth }
+        
+        set { layer.borderWidth = newValue }
+    }
+    
+    /// 描边的颜色
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            if let layColor = layer.borderColor {
+              return UIColor(cgColor: layColor)
+            }
+               
+            return .clear
+        }
+        
+        set { layer.borderColor = newValue?.cgColor }
+    }
+    
+    /// 圆角
+    @IBInspectable var cornerRadius: CGFloat {
+        get { layer.cornerRadius }
+        
+        set { layer.cornerRadius = newValue }
+    }
+    
+    @IBInspectable var shadowOffset: CGSize {
+        get { layer.shadowOffset }
+        
+        set { layer.shadowOffset = newValue }
+    }
+
+    @IBInspectable var shadowRadius: CGFloat {
+        get { layer.shadowRadius }
+        
+        set { layer.shadowRadius = newValue }
+    }
+
+    @IBInspectable var shadowOpacity: Float {
+        get { layer.shadowOpacity }
+        
+        set { layer.shadowOpacity = newValue }
+    }
+
+    @IBInspectable var shadowColor: UIColor? {
+        get {
+            if let lScolor = layer.shadowColor {
+                return UIColor(cgColor: lScolor)
+            }
+            
+            return .clear
+        }
+        
+        set { layer.shadowColor = newValue?.cgColor }
+    }
     
     /// Hide keyboard when tap outside the TextField
     @objc func hideKeyboard() {
@@ -116,5 +176,22 @@ extension UIView {
             from: nil,
             for: nil
         )
+    }
+}
+
+
+// MARK: UITextView
+extension UITextView {
+    
+    func increaseFontSize() {
+        guard let currentFont = font else { return }
+        
+        font = UIFont(name: currentFont.fontName, size: currentFont.pointSize + 1)
+    }
+    
+    func decreaseFontSize() {
+        guard let currentFont = font else { return }
+        
+        font = UIFont(name: currentFont.fontName, size: currentFont.pointSize - 1)
     }
 }
