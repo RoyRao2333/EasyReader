@@ -97,6 +97,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="aQp-3G-HjJ" id="nZV-eC-80l"/>
                         <outlet property="fontBtn" destination="dSQ-g3-wXL" id="XgA-dl-DbA"/>
                         <outlet property="fontSizeBtn" destination="elT-Wf-LaA" id="khK-WO-eXV"/>
                         <outlet property="textView" destination="mlI-wD-ggK" id="PlN-F3-diq"/>

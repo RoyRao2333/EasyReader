@@ -8,8 +8,7 @@
 import UIKit
 
 class ERPopoverViewController: UIViewController {
-    weak var textView: UITextView?
-    weak var contentView: UIView?
+    weak var parentVC: DocumentViewController?
     
     @IBOutlet private var largerFontBtn: UIButton!
     @IBOutlet private var smallerFontBtn: UIButton!
@@ -38,25 +37,22 @@ extension ERPopoverViewController {
 extension ERPopoverViewController {
     
     @IBAction private func increaseFontSize(_ sender: UIButton) {
-        textView?.increaseFontSize()
+        parentVC?.textView.increaseFontSize()
     }
     
     @IBAction private func decreaseFontSize(_ sender: UIButton) {
-        textView?.decreaseFontSize()
+        parentVC?.textView.decreaseFontSize()
     }
     
     @IBAction private func changeLightBackground(_ sender: UIButton) {
-        contentView?.backgroundColor = .white
-        textView?.textColor = .black
-    }
-    
-    @IBAction private func changeGrayBackground(_ sender: UIButton) {
-        contentView?.backgroundColor = .darkGray
-        textView?.textColor = .white
+        parentVC?.theme = .light
     }
     
     @IBAction private func changeRelaxBackground(_ sender: UIButton) {
-        contentView?.backgroundColor = UIColor(hex: "EAE5D1")
-        textView?.textColor = .black
+        parentVC?.theme = .relax
+    }
+    
+    @IBAction private func changeGrayBackground(_ sender: UIButton) {
+        parentVC?.theme = .gray
     }
 }

@@ -9,11 +9,39 @@ import UIKit
 
 class DocumentViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet private var backBtn: UIButton!
     @IBOutlet private var fontBtn: UIButton!
     @IBOutlet private var fontSizeBtn: UIButton!
 
     var document: Document?
     private var fontMenu: UIMenu!
+    
+    var theme: ReaderTheme = .light {
+        didSet {
+            switch theme {
+                case .light:
+                    view.backgroundColor = .white
+                    textView.textColor = .black
+                    backBtn.tintColor = .black
+                    fontBtn.tintColor = .black
+                    fontSizeBtn.tintColor = .black
+                    
+                case .gray:
+                    view.backgroundColor = .systemGray
+                    textView.textColor = .white
+                    backBtn.tintColor = .white
+                    fontBtn.tintColor = .white
+                    fontSizeBtn.tintColor = .white
+                    
+                case .relax:
+                    view.backgroundColor = UIColor(hex: "EAE5D1")
+                    textView.textColor = .black
+                    backBtn.tintColor = .black
+                    fontBtn.tintColor = .black
+                    fontSizeBtn.tintColor = .black
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,8 +104,7 @@ extension DocumentViewController {
         popVC.popoverPresentationController?.delegate = self
         popVC.popoverPresentationController?.sourceView = sender
         popVC.popoverPresentationController?.sourceRect = sender.bounds
-        popVC.textView = textView
-        popVC.contentView = view
+        popVC.parentVC = self
         
         present(popVC, animated: true, completion: nil)
     }
@@ -119,3 +146,10 @@ fileprivate let fontMenuItems: [UIAction] = [
     UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
     })
 ]
+
+
+enum ReaderTheme {
+    case light
+    case gray
+    case relax
+}
