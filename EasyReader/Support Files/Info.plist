@@ -17,10 +17,10 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleTypeName</key>
 			<string>rtf</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
@@ -29,15 +29,27 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleTypeName</key>
 			<string>rtfd</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.apple.rtfd</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleTypeName</key>
+			<string>pdf</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adobe.pdf</string>
 			</array>
 		</dict>
 	</array>

@@ -16,6 +16,8 @@
 		B06D4A30277EDC42008D10C0 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */; };
 		B08897A6278BDD3700250C48 /* ERPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897A5278BDD3700250C48 /* ERPopoverViewController.swift */; };
 		B08897A9278C005E00250C48 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B08897A8278C005E00250C48 /* Defaults */; };
+		B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897AA278C2B3700250C48 /* PDFViewController.swift */; };
+		B08897AE278C2C4800250C48 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B08897AD278C2C4800250C48 /* SnapKit */; };
 		B0A2A8EB277D8F1C00D1C2C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2A8EA277D8F1C00D1C2C4 /* AppDelegate.swift */; };
 		B0A2A8ED277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2A8EC277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift */; };
 		B0A2A8EF277D8F1C00D1C2C4 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2A8EE277D8F1C00D1C2C4 /* DocumentViewController.swift */; };
@@ -37,6 +39,7 @@
 		B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
 		B08897A5278BDD3700250C48 /* ERPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERPopoverViewController.swift; sourceTree = "<group>"; };
+		B08897AA278C2B3700250C48 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B0A2A8E7277D8F1C00D1C2C4 /* EasyReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A2A8EA277D8F1C00D1C2C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0A2A8EC277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08897AE278C2C4800250C48 /* SnapKit in Frameworks */,
 				B08897A9278C005E00250C48 /* Defaults in Frameworks */,
 				B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */,
 			);
@@ -89,6 +93,7 @@
 			children = (
 				B0A2A8EE277D8F1C00D1C2C4 /* DocumentViewController.swift */,
 				B08897A5278BDD3700250C48 /* ERPopoverViewController.swift */,
+				B08897AA278C2B3700250C48 /* PDFViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			packageProductDependencies = (
 				B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */,
 				B08897A8278C005E00250C48 /* Defaults */,
+				B08897AD278C2C4800250C48 /* SnapKit */,
 			);
 			productName = EasyReader;
 			productReference = B0A2A8E7277D8F1C00D1C2C4 /* EasyReader.app */;
@@ -211,6 +217,7 @@
 			packageReferences = (
 				B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				B08897A7278C005E00250C48 /* XCRemoteSwiftPackageReference "Defaults" */,
+				B08897AC278C2C4800250C48 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = B0A2A8E8277D8F1C00D1C2C4 /* Products */;
 			projectDirPath = "";
@@ -245,6 +252,7 @@
 				B006B6CF277EFECB00092B54 /* StoryBoardExtension.swift in Sources */,
 				B0A2A8EF277D8F1C00D1C2C4 /* DocumentViewController.swift in Sources */,
 				B06D4A2C277EDC42008D10C0 /* ViewExtension.swift in Sources */,
+				B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */,
 				B06D4A2D277EDC42008D10C0 /* StringExtension.swift in Sources */,
 				B08897A6278BDD3700250C48 /* ERPopoverViewController.swift in Sources */,
 				B0A2A8ED277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift in Sources */,
@@ -486,6 +494,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		B08897AC278C2C4800250C48 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
@@ -501,6 +517,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B08897A7278C005E00250C48 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
+		};
+		B08897AD278C2C4800250C48 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B08897AC278C2C4800250C48 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;

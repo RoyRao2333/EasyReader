@@ -73,7 +73,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="textbox.zh" catalog="system">
+                                <state key="normal" image="character.textbox.zh" catalog="system">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
@@ -106,6 +106,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl9-ES-qQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855" y="654"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x4e-gi-5NP">
+            <objects>
+                <viewController storyboardIdentifier="PDFViewController" id="jng-zr-34s" customClass="PDFViewController" customModule="EasyReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oyf-2D-3hI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZ8-hD-x0O">
+                                <rect key="frame" x="15" y="15" width="30" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="FNs-Ty-WM4"/>
+                                    <constraint firstAttribute="width" constant="30" id="iMx-BJ-AKh"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="chevron.backward" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dz3-Hq-blk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mZ8-hD-x0O" firstAttribute="top" secondItem="Dz3-Hq-blk" secondAttribute="top" constant="15" id="VPG-rt-mBu"/>
+                            <constraint firstItem="mZ8-hD-x0O" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" constant="15" id="eV0-yn-TEx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="mZ8-hD-x0O" id="Ifi-u1-3aq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V34-CT-qSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="654"/>
         </scene>
         <!--Title-->
         <scene sceneID="Jms-YN-jNH">
@@ -247,12 +281,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gh-Ha-v1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1507.2" y="411.99400299850078"/>
+            <point key="canvasLocation" x="853" y="186"/>
         </scene>
     </scenes>
     <resources>
+        <image name="character.textbox.zh" catalog="system" width="128" height="91"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="textbox.zh" catalog="system" width="128" height="91"/>
         <image name="textformat.size" catalog="system" width="128" height="80"/>
         <image name="textformat.size.larger" catalog="system" width="128" height="128"/>
         <image name="textformat.size.smaller" catalog="system" width="128" height="122"/>
@@ -261,6 +295,9 @@
         </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
