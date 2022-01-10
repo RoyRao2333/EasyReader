@@ -16,6 +16,8 @@ class DocumentViewController: UIViewController {
     var document: Document?
     private var fontMenu: UIMenu!
     
+    private var fontMenuItems: [UIAction] = []
+    
     var theme: ReaderTheme = .light {
         didSet {
             switch theme {
@@ -72,6 +74,18 @@ class DocumentViewController: UIViewController {
 extension DocumentViewController {
     
     private func setup() {
+        fontMenuItems = [
+            UIAction(title: "System", identifier: .init("FontMenuSystemItem")) { [weak self] _ in
+                self?.textView.font = UIFont.systemFont(ofSize: self?.textView.font?.pointSize ?? UIFont.systemFontSize)
+            },
+            UIAction(title: "Helvetica", identifier: .init("FontMenuHelveticaItem")) { [weak self] _ in
+                self?.textView.font = UIFont(name: "HelveticaNeue", size: self?.textView.font?.pointSize ?? UIFont.systemFontSize)
+            },
+            UIAction(title: "Times New Roman", identifier: .init("FontMenuNewYorkItem")) { [weak self] _ in
+                self?.textView.font = UIFont(name: "TimesNewRomanPSMT", size: self?.textView.font?.pointSize ?? UIFont.systemFontSize)
+            },
+        ]
+        
         fontMenu = UIMenu(
             title: "Font",
             image: UIImage(systemName: "textformat.size"),
@@ -81,8 +95,6 @@ extension DocumentViewController {
         )
         fontBtn.showsMenuAsPrimaryAction = true
         fontBtn.menu = fontMenu
-        
-        
     }
 }
 
@@ -109,7 +121,7 @@ extension DocumentViewController {
         present(popVC, animated: true, completion: nil)
     }
     
-    @IBAction private func showFontMenu(_ sender: UIButton) {
+    private func changeFont(_ font: UIFont) {
         
     }
 }
@@ -136,16 +148,6 @@ extension DocumentViewController: UIPopoverPresentationControllerDelegate {
         .none
     }
 }
-
-
-fileprivate let fontMenuItems: [UIAction] = [
-    UIAction(title: "Standard item", image: UIImage(systemName: "sun.max"), handler: { (_) in
-    }),
-    UIAction(title: "Disabled item", image: UIImage(systemName: "moon"), attributes: .disabled, handler: { (_) in
-    }),
-    UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
-    })
-]
 
 
 enum ReaderTheme {
