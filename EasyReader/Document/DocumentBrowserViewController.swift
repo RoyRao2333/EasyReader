@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PDFKit
 
 
 class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocumentBrowserViewControllerDelegate {
@@ -62,11 +63,22 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     // MARK: Document Presentation
     
     func presentDocument(at documentURL: URL) {
-        let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
-        documentViewController.document = Document(fileURL: documentURL)
-        documentViewController.modalPresentationStyle = .fullScreen
-        
-        present(documentViewController, animated: true, completion: nil)
+        switch documentURL.pathExtension {
+            case ERFileType.plain.ext(), ERFileType.rtf.ext(), ERFileType.rtfd.ext():
+                let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
+                documentViewController.document = Document(fileURL: documentURL)
+                documentViewController.modalPresentationStyle = .fullScreen
+                present(documentViewController, animated: true, completion: nil)
+                
+            case ERFileType.pdf.ext():
+                let pdfViewController = PDFViewController.instantiate(withStoryboard: "Main")
+                pdfViewController.pdfDocument = PDFDocument(url: documentURL)
+                pdfViewController.modalPresentationStyle = .fullScreen
+                present(pdfViewController, animated: true, completion: nil)
+                
+            default:
+                logger.warning("Unknown File Type.")
+        }
     }
 }
 

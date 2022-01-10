@@ -11,9 +11,9 @@ import SnapKit
 
 class PDFViewController: UIViewController {
     @IBOutlet private var backBtn: UIButton!
+    @IBOutlet private var pdfView: PDFView!
     
     var pdfDocument: PDFDocument?
-    private var pdfView: PDFView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +35,7 @@ class PDFViewController: UIViewController {
 extension PDFViewController {
     
     private func setup() {
-        pdfView = PDFView(frame: .zero)
         pdfView.delegate = self
-        view.addSubview(pdfView)
-        pdfView.translatesAutoresizingMaskIntoConstraints = false
-        pdfView.snp.makeConstraints { make in
-            make.top.equalTo(backBtn.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview()
-            make.bottomMargin.equalTo(view.snp.bottomMargin)
-        }
     }
 }
 

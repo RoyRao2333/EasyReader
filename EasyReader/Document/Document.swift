@@ -11,6 +11,11 @@ enum ERFileType: String {
     case plain = "public.plain-text"
     case rtf = "public.rtf"
     case rtfd = "com.apple.rtfd"
+    case pdf = "com.adobe.pdf"
+    
+    func ext() -> String {
+        String(describing: self)
+    }
 }
 
 class Document: UIDocument {

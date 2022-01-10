@@ -124,17 +124,28 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="dismissSelf:" destination="jng-zr-34s" eventType="touchUpInside" id="pfK-wl-cgW"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-Bj-mYV" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dz3-Hq-blk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Dz3-Hq-blk" firstAttribute="trailing" secondItem="Rcn-Bj-mYV" secondAttribute="trailing" id="FBc-2z-oRp"/>
                             <constraint firstItem="mZ8-hD-x0O" firstAttribute="top" secondItem="Dz3-Hq-blk" secondAttribute="top" constant="15" id="VPG-rt-mBu"/>
+                            <constraint firstItem="Rcn-Bj-mYV" firstAttribute="top" secondItem="mZ8-hD-x0O" secondAttribute="bottom" constant="15" id="aPN-f3-YM1"/>
                             <constraint firstItem="mZ8-hD-x0O" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" constant="15" id="eV0-yn-TEx"/>
+                            <constraint firstItem="Dz3-Hq-blk" firstAttribute="bottom" secondItem="Rcn-Bj-mYV" secondAttribute="bottom" id="pBT-ea-fdw"/>
+                            <constraint firstItem="Rcn-Bj-mYV" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" id="xU3-B4-Rr0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="mZ8-hD-x0O" id="Ifi-u1-3aq"/>
+                        <outlet property="pdfView" destination="Rcn-Bj-mYV" id="onq-tF-2bf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V34-CT-qSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
