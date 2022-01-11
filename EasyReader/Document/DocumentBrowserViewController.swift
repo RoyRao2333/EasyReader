@@ -7,7 +7,19 @@
 
 import UIKit
 import PDFKit
+import UniformTypeIdentifiers
 
+enum ERFileType: String {
+    case txt = "public.plain-text"
+    case rtf = "public.rtf"
+    case rtfd = "com.apple.rtfd"
+    case pdf = "com.adobe.pdf"
+    case epub = "org.idpf.epub-container"
+    
+    func ext() -> String {
+        String(describing: self)
+    }
+}
 
 class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocumentBrowserViewControllerDelegate {
     
@@ -64,18 +76,18 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     func presentDocument(at documentURL: URL) {
         switch documentURL.pathExtension {
-            case ERFileType.plain.ext(), ERFileType.rtf.ext(), ERFileType.rtfd.ext():
+            case ERFileType.txt.ext(), ERFileType.rtf.ext(), ERFileType.rtfd.ext():
                 let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
                 documentViewController.document = Document(fileURL: documentURL)
                 documentViewController.modalPresentationStyle = .fullScreen
                 present(documentViewController, animated: true, completion: nil)
-                
+
             case ERFileType.pdf.ext():
                 let pdfViewController = PDFViewController.instantiate(withStoryboard: "Main")
                 pdfViewController.pdfDocument = PDFDocument(url: documentURL)
                 pdfViewController.modalPresentationStyle = .fullScreen
                 present(pdfViewController, animated: true, completion: nil)
-                
+
             default:
                 logger.warning("Unknown File Type.")
         }
