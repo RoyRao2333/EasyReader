@@ -11,9 +11,12 @@ import SnapKit
 
 class PDFViewController: UIViewController {
     @IBOutlet private var backBtn: UIButton!
+    @IBOutlet private var directionBtn: UIButton!
     @IBOutlet private var pdfView: PDFView!
     
     var pdfDocument: PDFDocument?
+    private var directionMenu: UIMenu!
+    private var directionMenuItems: [UIAction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,38 @@ class PDFViewController: UIViewController {
 extension PDFViewController {
     
     private func setup() {
+        pdfView.backgroundColor = .clear
+        pdfView.usePageViewController(true)
+        pdfView.autoScales = true
+        pdfView.displayDirection = .horizontal
         pdfView.delegate = self
+        (pdfView.subviews.first?.subviews.first as? UIScrollView)?.showsHorizontalScrollIndicator = false
+        
+        directionMenuItems = [
+            UIAction(
+                title: "Horizontal",
+                image: UIImage(systemName: "rectangle.portrait.arrowtriangle.2.outward"),
+                identifier: .init("FontMenuSystemItem")
+            ) { [weak self] _ in
+                self?.pdfView.displayDirection = .horizontal
+            },
+            UIAction(
+                title: "Vertical",
+                image: UIImage(systemName: "rectangle.arrowtriangle.2.outward"),
+                identifier: .init("FontMenuHelveticaItem")
+            ) { [weak self] _ in
+                self?.pdfView.displayDirection = .vertical
+            },
+        ]
+        
+        directionMenu = UIMenu(
+            title: "Scroll Direction",
+            identifier: .init("PDFViewControllerDirectionMenu"),
+            options: [],
+            children: directionMenuItems
+        )
+        directionBtn.showsMenuAsPrimaryAction = true
+        directionBtn.menu = directionMenu
     }
 }
 

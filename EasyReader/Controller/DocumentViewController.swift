@@ -15,7 +15,6 @@ class DocumentViewController: UIViewController {
 
     var document: Document?
     private var fontMenu: UIMenu!
-    
     private var fontMenuItems: [UIAction] = []
     
     var theme: ReaderTheme = .light {
@@ -88,7 +87,6 @@ extension DocumentViewController {
         
         fontMenu = UIMenu(
             title: "Font",
-            image: UIImage(systemName: "textformat.size"),
             identifier: .init("ERFontMenu"),
             options: [],
             children: fontMenuItems

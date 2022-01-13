@@ -131,20 +131,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-Bj-mYV" customClass="PDFView">
                                 <rect key="frame" x="0.0" y="52" width="375" height="615"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJI-bl-blm">
+                                <rect key="frame" x="337" y="15" width="23" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="p42-S6-owQ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrow.up.and.down.and.arrow.left.and.right" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dz3-Hq-blk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Dz3-Hq-blk" firstAttribute="trailing" secondItem="Rcn-Bj-mYV" secondAttribute="trailing" id="FBc-2z-oRp"/>
                             <constraint firstItem="mZ8-hD-x0O" firstAttribute="top" secondItem="Dz3-Hq-blk" secondAttribute="top" constant="15" id="VPG-rt-mBu"/>
+                            <constraint firstItem="QJI-bl-blm" firstAttribute="trailing" secondItem="Oyf-2D-3hI" secondAttribute="trailing" constant="-15" id="XCI-Kb-wOX"/>
                             <constraint firstItem="Rcn-Bj-mYV" firstAttribute="top" secondItem="mZ8-hD-x0O" secondAttribute="bottom" constant="15" id="aPN-f3-YM1"/>
                             <constraint firstItem="mZ8-hD-x0O" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" constant="15" id="eV0-yn-TEx"/>
+                            <constraint firstItem="QJI-bl-blm" firstAttribute="top" secondItem="Dz3-Hq-blk" secondAttribute="top" constant="15" id="koC-PO-SAn"/>
                             <constraint firstItem="Dz3-Hq-blk" firstAttribute="bottom" secondItem="Rcn-Bj-mYV" secondAttribute="bottom" id="pBT-ea-fdw"/>
                             <constraint firstItem="Rcn-Bj-mYV" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" id="xU3-B4-Rr0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="mZ8-hD-x0O" id="Ifi-u1-3aq"/>
+                        <outlet property="directionBtn" destination="QJI-bl-blm" id="Dea-aa-Owa"/>
                         <outlet property="pdfView" destination="Rcn-Bj-mYV" id="onq-tF-2bf"/>
                     </connections>
                 </viewController>
@@ -296,6 +308,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.and.down.and.arrow.left.and.right" catalog="system" width="128" height="122"/>
         <image name="character.textbox.zh" catalog="system" width="128" height="91"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="textformat.size" catalog="system" width="128" height="80"/>

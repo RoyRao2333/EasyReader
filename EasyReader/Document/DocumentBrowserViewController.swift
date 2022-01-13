@@ -75,6 +75,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     // MARK: Document Presentation
     
     func presentDocument(at documentURL: URL) {
+        let _ = documentURL.startAccessingSecurityScopedResource()
         switch documentURL.pathExtension {
             case ERFileType.txt.ext(), ERFileType.rtf.ext(), ERFileType.rtfd.ext():
                 let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
@@ -91,6 +92,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             default:
                 logger.warning("Unknown File Type.")
         }
+        documentURL.stopAccessingSecurityScopedResource()
     }
 }
 
