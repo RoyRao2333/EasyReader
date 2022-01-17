@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: String -
+// MARK: General -
 extension String {
     
     func indexOfRepeatingCharacter(of character: Character, count: Int) -> String.Index? {
@@ -69,6 +69,19 @@ extension String {
         String(format: self.localized(), arguments: values)
     }
     
+    static var systemLanguage: String {
+        String(Locale.preferredLanguages[0].prefix(2))
+    }
+    
+    static var appVersion: String {
+        Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    }
+}
+
+
+// MARK: For Chinese -
+extension String {
+    
     /// Check whether String consist of 100% Chinese characters.
     ///
     /// - Returns: true if only Chinese
@@ -129,22 +142,45 @@ extension String {
         
         return (Float(chineseCount) / Float(stripped.count)) * 100
     }
+}
+
+
+// MARK: For Emoji -
+extension Character {
     
-    static var systemLanguage: String {
-        String(Locale.preferredLanguages[0].prefix(2))
+    var isSimpleEmoji: Bool {
+        guard let firstScalar = unicodeScalars.first else { return false }
+        return firstScalar.properties.isEmoji && firstScalar.value > 0x238C
     }
-    
-    static var appVersion: String {
-        Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-    }
+
+    var isCombinedIntoEmoji: Bool { unicodeScalars.count > 1 && unicodeScalars.first?.properties.isEmoji ?? false }
+
+    var isEmoji: Bool { isSimpleEmoji || isCombinedIntoEmoji }
+}
+
+extension String {
+    var isSingleEmoji: Bool { count == 1 && containsEmoji }
+
+    var containsEmoji: Bool { contains { $0.isEmoji } }
+
+    var containsOnlyEmoji: Bool { !isEmpty && !contains { !$0.isEmoji } }
+
+    var emojiString: String { emojis.map { String($0) }.reduce("", +) }
+
+    var emojis: [Character] { filter { $0.isEmoji } }
+
+    var emojiScalars: [UnicodeScalar] { filter { $0.isEmoji }.flatMap { $0.unicodeScalars } }
+}
+
+
+// MARK: MIME Types -
+extension String {
     
     var mimeType: String {
         (self as NSString).mimeType
     }
 }
 
-
-// MARK: NSString
 extension NSString {
     
     var mimeType: String {
