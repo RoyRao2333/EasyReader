@@ -75,22 +75,26 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     // MARK: Document Presentation
     
     func presentDocument(at documentURL: URL) {
+        let type = UTType(filenameExtension: documentURL.pathExtension) ?? .plainText
+        
         let _ = documentURL.startAccessingSecurityScopedResource()
-        switch documentURL.pathExtension {
-            case ERFileType.txt.ext(), ERFileType.rtf.ext(), ERFileType.rtfd.ext():
-                let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
-                documentViewController.document = Document(fileURL: documentURL)
-                documentViewController.modalPresentationStyle = .fullScreen
-                present(documentViewController, animated: true, completion: nil)
-
-            case ERFileType.pdf.ext():
+        switch type {
+            case .pdf:
                 let pdfViewController = PDFViewController.instantiate(withStoryboard: "Main")
                 pdfViewController.pdfDocument = PDFDocument(url: documentURL)
                 pdfViewController.modalPresentationStyle = .fullScreen
+                pdfViewController.modalTransitionStyle = .crossDissolve
                 present(pdfViewController, animated: true, completion: nil)
-
+                
+            case .plainText, .rtf, .rtfd:
+                fallthrough
+                
             default:
-                logger.warning("Unknown File Type.")
+                let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
+                documentViewController.document = Document(fileURL: documentURL)
+                documentViewController.modalPresentationStyle = .fullScreen
+                documentViewController.modalTransitionStyle = .crossDissolve
+                present(documentViewController, animated: true, completion: nil)
         }
         documentURL.stopAccessingSecurityScopedResource()
     }
