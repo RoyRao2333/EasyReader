@@ -8,7 +8,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-// MARK: View
+// MARK: View -
 extension View {
     
     /**
@@ -108,7 +108,7 @@ extension View {
 }
 
 
-// MARK: UIView
+// MARK: UIView -
 extension UIView {
     
     /// 描边的粗细
@@ -180,7 +180,7 @@ extension UIView {
 }
 
 
-// MARK: UITextView
+// MARK: UITextView -
 extension UITextView {
     
     func increaseFontSize() {

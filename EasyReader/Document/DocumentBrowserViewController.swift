@@ -8,6 +8,7 @@
 import UIKit
 import PDFKit
 import UniformTypeIdentifiers
+import EPUBKit
 
 enum ERFileType: String {
     case txt = "public.plain-text"
@@ -80,17 +81,24 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let _ = documentURL.startAccessingSecurityScopedResource()
         switch type {
             case .pdf:
-                let pdfViewController = PDFViewController.instantiate(withStoryboard: "Main")
+                let pdfViewController = PDFViewController.instantiate(withStoryboard: .main)
                 pdfViewController.pdfDocument = PDFDocument(url: documentURL)
                 pdfViewController.modalPresentationStyle = .fullScreen
                 pdfViewController.modalTransitionStyle = .crossDissolve
                 present(pdfViewController, animated: true, completion: nil)
                 
+            case .epub:
+                let epubViewController = EPUBViewController.instantiate(withStoryboard: .main)
+                epubViewController.epubDocument = EPUBDocument(url: documentURL)
+                epubViewController.modalPresentationStyle = .fullScreen
+                epubViewController.modalTransitionStyle = .crossDissolve
+                present(epubViewController, animated: true, completion: nil)
+                
             case .plainText, .rtf, .rtfd:
                 fallthrough
                 
             default:
-                let documentViewController = DocumentViewController.instantiate(withStoryboard: "Main")
+                let documentViewController = DocumentViewController.instantiate(withStoryboard: .main)
                 documentViewController.document = Document(fileURL: documentURL)
                 documentViewController.modalPresentationStyle = .fullScreen
                 documentViewController.modalTransitionStyle = .crossDissolve

@@ -137,8 +137,23 @@ extension String {
     static var appVersion: String {
         Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     }
+    
+    var mimeType: String {
+        (self as NSString).mimeType
+    }
 }
 
+
+// MARK: NSString
+extension NSString {
+    
+    var mimeType: String {
+        MimeType(ext: self.pathExtension)
+    }
+}
+
+
+// MARK: String Encoding -
 extension String.Encoding {
     static let GB_18030_2000 = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue)))
     

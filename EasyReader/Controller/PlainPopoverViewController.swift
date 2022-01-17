@@ -1,5 +1,5 @@
 //
-//  ERPopoverViewController.swift
+//  PlainPopoverViewController.swift
 //  EasyReader
 //
 //  Created by roy on 2022/1/10.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ERPopoverViewController: UIViewController {
+class PlainPopoverViewController: UIViewController {
     weak var parentVC: DocumentViewController?
     
     @IBOutlet private var largerFontBtn: UIButton!
@@ -19,22 +19,12 @@ class ERPopoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setup()
-    }
-}
-
-
-// MARK: Private Methods -
-extension ERPopoverViewController {
-    
-    private func setup() {
-        
     }
 }
 
 
 // MARK: Actions -
-extension ERPopoverViewController {
+extension PlainPopoverViewController {
     
     @IBAction private func increaseFontSize(_ sender: UIButton) {
         parentVC?.textView.increaseFontSize()

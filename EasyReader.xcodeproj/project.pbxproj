@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		B006B6CF277EFECB00092B54 /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */; };
+		B04409F5279507F300C2BE35 /* EPUBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04409F4279507F300C2BE35 /* EPUBViewController.swift */; };
+		B0440A1A279519D000C2BE35 /* EPUBKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0440A19279519D000C2BE35 /* EPUBKit */; };
+		B0440A1C279542E500C2BE35 /* FileAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0440A1B279542E500C2BE35 /* FileAccess.swift */; };
+		B0440A20279543F300C2BE35 /* MIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0440A1F279543F300C2BE35 /* MIMEType.swift */; };
+		B0440A222795447B00C2BE35 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0440A212795447B00C2BE35 /* URLExtension.swift */; };
 		B06D4A24277EDA70008D10C0 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A23277EDA70008D10C0 /* Content.swift */; };
 		B06D4A2C277EDC42008D10C0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A27277EDC42008D10C0 /* ViewExtension.swift */; };
 		B06D4A2D277EDC42008D10C0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A28277EDC42008D10C0 /* StringExtension.swift */; };
 		B06D4A2E277EDC42008D10C0 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A29277EDC42008D10C0 /* ImageExtension.swift */; };
 		B06D4A2F277EDC42008D10C0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */; };
 		B06D4A30277EDC42008D10C0 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */; };
-		B08897A6278BDD3700250C48 /* ERPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897A5278BDD3700250C48 /* ERPopoverViewController.swift */; };
+		B08897A6278BDD3700250C48 /* PlainPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */; };
 		B08897A9278C005E00250C48 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B08897A8278C005E00250C48 /* Defaults */; };
 		B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897AA278C2B3700250C48 /* PDFViewController.swift */; };
 		B08897AE278C2C4800250C48 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B08897AD278C2C4800250C48 /* SnapKit */; };
@@ -28,18 +33,21 @@
 		B0A2A903277DA0DE00D1C2C4 /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B0A2A902277DA0DE00D1C2C4 /* Untitled.rtf */; };
 		B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */; };
 		B0A2A90A277DA4AF00D1C2C4 /* ERError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2A909277DA4AF00D1C2C4 /* ERError.swift */; };
-		B0DD854E278D29A50065602F /* EPUBKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0DD854D278D29A50065602F /* EPUBKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardExtension.swift; sourceTree = "<group>"; };
+		B04409F4279507F300C2BE35 /* EPUBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBViewController.swift; sourceTree = "<group>"; };
+		B0440A1B279542E500C2BE35 /* FileAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAccess.swift; sourceTree = "<group>"; };
+		B0440A1F279543F300C2BE35 /* MIMEType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIMEType.swift; sourceTree = "<group>"; };
+		B0440A212795447B00C2BE35 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		B06D4A23277EDA70008D10C0 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		B06D4A27277EDC42008D10C0 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B06D4A28277EDC42008D10C0 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B06D4A29277EDC42008D10C0 /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
-		B08897A5278BDD3700250C48 /* ERPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERPopoverViewController.swift; sourceTree = "<group>"; };
+		B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPopoverViewController.swift; sourceTree = "<group>"; };
 		B08897AA278C2B3700250C48 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B0A2A8E7277D8F1C00D1C2C4 /* EasyReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A2A8EA277D8F1C00D1C2C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +70,7 @@
 				B08897AE278C2C4800250C48 /* SnapKit in Frameworks */,
 				B08897A9278C005E00250C48 /* Defaults in Frameworks */,
 				B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */,
-				B0DD854E278D29A50065602F /* EPUBKit in Frameworks */,
+				B0440A1A279519D000C2BE35 /* EPUBKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +92,11 @@
 				B06D4A29277EDC42008D10C0 /* ImageExtension.swift */,
 				B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */,
 				B06D4A28277EDC42008D10C0 /* StringExtension.swift */,
+				B0440A212795447B00C2BE35 /* URLExtension.swift */,
 				B06D4A27277EDC42008D10C0 /* ViewExtension.swift */,
 				B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */,
+				B0440A1B279542E500C2BE35 /* FileAccess.swift */,
+				B0440A1F279543F300C2BE35 /* MIMEType.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -93,9 +104,10 @@
 		B08897A4278BDCE900250C48 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */,
 				B0A2A8EE277D8F1C00D1C2C4 /* DocumentViewController.swift */,
 				B08897AA278C2B3700250C48 /* PDFViewController.swift */,
-				B08897A5278BDD3700250C48 /* ERPopoverViewController.swift */,
+				B04409F4279507F300C2BE35 /* EPUBViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,7 +199,7 @@
 				B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */,
 				B08897A8278C005E00250C48 /* Defaults */,
 				B08897AD278C2C4800250C48 /* SnapKit */,
-				B0DD854D278D29A50065602F /* EPUBKit */,
+				B0440A19279519D000C2BE35 /* EPUBKit */,
 			);
 			productName = EasyReader;
 			productReference = B0A2A8E7277D8F1C00D1C2C4 /* EasyReader.app */;
@@ -221,7 +233,7 @@
 				B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				B08897A7278C005E00250C48 /* XCRemoteSwiftPackageReference "Defaults" */,
 				B08897AC278C2C4800250C48 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				B0DD854C278D29A50065602F /* XCRemoteSwiftPackageReference "EPUBKit" */,
+				B0440A18279519D000C2BE35 /* XCRemoteSwiftPackageReference "EPUBKit" */,
 			);
 			productRefGroup = B0A2A8E8277D8F1C00D1C2C4 /* Products */;
 			projectDirPath = "";
@@ -256,13 +268,17 @@
 				B006B6CF277EFECB00092B54 /* StoryBoardExtension.swift in Sources */,
 				B0A2A8EF277D8F1C00D1C2C4 /* DocumentViewController.swift in Sources */,
 				B06D4A2C277EDC42008D10C0 /* ViewExtension.swift in Sources */,
+				B0440A222795447B00C2BE35 /* URLExtension.swift in Sources */,
 				B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */,
+				B0440A20279543F300C2BE35 /* MIMEType.swift in Sources */,
 				B06D4A2D277EDC42008D10C0 /* StringExtension.swift in Sources */,
-				B08897A6278BDD3700250C48 /* ERPopoverViewController.swift in Sources */,
+				B08897A6278BDD3700250C48 /* PlainPopoverViewController.swift in Sources */,
 				B0A2A8ED277D8F1C00D1C2C4 /* DocumentBrowserViewController.swift in Sources */,
 				B06D4A30277EDC42008D10C0 /* NumberExtension.swift in Sources */,
 				B0A2A8EB277D8F1C00D1C2C4 /* AppDelegate.swift in Sources */,
+				B04409F5279507F300C2BE35 /* EPUBViewController.swift in Sources */,
 				B06D4A2E277EDC42008D10C0 /* ImageExtension.swift in Sources */,
+				B0440A1C279542E500C2BE35 /* FileAccess.swift in Sources */,
 				B06D4A24277EDA70008D10C0 /* Content.swift in Sources */,
 				B06D4A2F277EDC42008D10C0 /* ColorExtension.swift in Sources */,
 			);
@@ -341,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -396,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -422,7 +438,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +468,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,6 +506,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B0440A18279519D000C2BE35 /* XCRemoteSwiftPackageReference "EPUBKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/witekbobrowski/EPUBKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 		B08897A7278C005E00250C48 /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -514,17 +538,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		B0DD854C278D29A50065602F /* XCRemoteSwiftPackageReference "EPUBKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/witekbobrowski/EPUBKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B0440A19279519D000C2BE35 /* EPUBKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0440A18279519D000C2BE35 /* XCRemoteSwiftPackageReference "EPUBKit" */;
+			productName = EPUBKit;
+		};
 		B08897A8278C005E00250C48 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B08897A7278C005E00250C48 /* XCRemoteSwiftPackageReference "Defaults" */;
@@ -539,11 +560,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
 			productName = SwiftyBeaver;
-		};
-		B0DD854D278D29A50065602F /* EPUBKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B0DD854C278D29A50065602F /* XCRemoteSwiftPackageReference "EPUBKit" */;
-			productName = EPUBKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -164,6 +164,53 @@
             </objects>
             <point key="canvasLocation" x="1614" y="654"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GdF-zT-4gJ">
+            <objects>
+                <viewController storyboardIdentifier="EPUBViewController" id="jHp-VY-ptg" customClass="EPUBViewController" customModule="EasyReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P15-cU-Gl8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvW-pv-PDZ">
+                                <rect key="frame" x="15" y="15" width="30" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="ULs-3M-6rm"/>
+                                    <constraint firstAttribute="width" constant="30" id="tvq-qo-5yj"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="dismissSelf:" destination="jng-zr-34s" eventType="touchUpInside" id="HvT-oQ-P9a"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="447-AY-x0c">
+                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UCb-vD-uUS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XvW-pv-PDZ" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" constant="15" id="3Ej-1G-neR"/>
+                            <constraint firstItem="XvW-pv-PDZ" firstAttribute="top" secondItem="UCb-vD-uUS" secondAttribute="top" constant="15" id="4hY-lu-4Ha"/>
+                            <constraint firstItem="447-AY-x0c" firstAttribute="top" secondItem="XvW-pv-PDZ" secondAttribute="bottom" constant="15" id="8gO-ue-gnF"/>
+                            <constraint firstItem="447-AY-x0c" firstAttribute="trailing" secondItem="UCb-vD-uUS" secondAttribute="trailing" id="Awl-n2-aHT"/>
+                            <constraint firstItem="447-AY-x0c" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" id="Q3E-Yk-80p"/>
+                            <constraint firstItem="447-AY-x0c" firstAttribute="bottom" secondItem="UCb-vD-uUS" secondAttribute="bottom" id="Ux6-iA-28B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="XvW-pv-PDZ" id="yym-r7-Y97"/>
+                        <outlet property="textView" destination="447-AY-x0c" id="n7l-wc-vf4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfH-QE-zFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361" y="654"/>
+        </scene>
         <!--Title-->
         <scene sceneID="Jms-YN-jNH">
             <objects>

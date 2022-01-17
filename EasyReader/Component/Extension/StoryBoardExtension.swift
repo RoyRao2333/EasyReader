@@ -7,9 +7,13 @@
 
 import UIKit
 
+enum StoryboardName: String {
+    case main = "Main"
+}
+
 extension UIViewController {
     
-    static func instantiate(withStoryboard sbName: String) -> Self {
-        UIStoryboard(name: sbName, bundle: nil).instantiateViewController(withIdentifier: "\(Self.self)") as! Self
+    static func instantiate(withStoryboard sbName: StoryboardName) -> Self {
+        UIStoryboard(name: sbName.rawValue, bundle: nil).instantiateViewController(withIdentifier: "\(Self.self)") as! Self
     }
 }

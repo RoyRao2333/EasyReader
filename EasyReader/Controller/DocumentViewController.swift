@@ -107,7 +107,7 @@ extension DocumentViewController {
     }
     
     @IBAction private func showFontSizePopover(_ sender: UIButton) {
-        let popVC = ERPopoverViewController.instantiate(withStoryboard: "Main")
+        let popVC = PlainPopoverViewController.instantiate(withStoryboard: .main)
         popVC.preferredContentSize = CGSize(width: 180, height: 130)
         popVC.modalPresentationStyle = .popover
         popVC.popoverPresentationController?.permittedArrowDirections = .any
