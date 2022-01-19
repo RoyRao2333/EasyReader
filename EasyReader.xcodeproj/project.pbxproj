@@ -18,6 +18,7 @@
 		B06D4A2E277EDC42008D10C0 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A29277EDC42008D10C0 /* ImageExtension.swift */; };
 		B06D4A2F277EDC42008D10C0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */; };
 		B06D4A30277EDC42008D10C0 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */; };
+		B07B66AB2797B7F200D38991 /* ERListContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B66AA2797B7F200D38991 /* ERListContentView.xib */; };
 		B08897A6278BDD3700250C48 /* PlainPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */; };
 		B08897A9278C005E00250C48 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B08897A8278C005E00250C48 /* Defaults */; };
 		B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897AA278C2B3700250C48 /* PDFViewController.swift */; };
@@ -54,6 +55,7 @@
 		B06D4A29277EDC42008D10C0 /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
+		B07B66AA2797B7F200D38991 /* ERListContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ERListContentView.xib; sourceTree = "<group>"; };
 		B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPopoverViewController.swift; sourceTree = "<group>"; };
 		B08897AA278C2B3700250C48 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B0A093AA27965C1D00848EE4 /* ERFileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERFileType.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		B07B66A72797B51700D38991 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B07B66AA2797B7F200D38991 /* ERListContentView.xib */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		B08897A4278BDCE900250C48 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A093D92796BB7B00848EE4 /* CollectionView */,
+				B07B66A72797B51700D38991 /* Resource */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +328,7 @@
 				B0A2A8F9277D8F1E00D1C2C4 /* LaunchScreen.storyboard in Resources */,
 				B0A2A8F6277D8F1E00D1C2C4 /* Assets.xcassets in Resources */,
 				B0A2A8F4277D8F1C00D1C2C4 /* Main.storyboard in Resources */,
+				B07B66AB2797B7F200D38991 /* ERListContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

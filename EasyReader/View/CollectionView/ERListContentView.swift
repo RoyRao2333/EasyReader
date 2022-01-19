@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 
 class ERListContentView: UIView, UIContentView {
+    @IBOutlet private var containerView: UIView!
     @IBOutlet private var thumbnailImageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var fileTypeLabel: UILabel!
@@ -28,17 +30,30 @@ class ERListContentView: UIView, UIContentView {
     }
     
     
-    override func willMove(toWindow newWindow: UIWindow?) {
-        super.willMove(toWindow: newWindow)
+    init(configuration: ERListContentConfiguration) {
+        super.init(frame: .zero)
         
-        if newWindow != nil {
-            apply(configuration: currentConfiguration)
-        }
+        loadNib()
+        apply(configuration: configuration)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 
 extension ERListContentView {
+    
+    private func loadNib() {
+        Bundle.main.loadNibNamed("\(ERListContentView.self)", owner: self, options: nil)
+        
+        addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
     
     private func apply(configuration: ERListContentConfiguration) {
         guard configuration != currentConfiguration else { return }

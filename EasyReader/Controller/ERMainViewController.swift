@@ -64,6 +64,7 @@ extension ERMainViewController {
     private func makeDataSource() -> DataSource {
         let cellRegistration = CellRegistration { cell, indexPath, item in
             cell.file = item
+            cell.accessories = [.disclosureIndicator()]
         }
         
         let dataSource = DataSource(collectionView: collectionView) { collectionView, indexPath, item in
@@ -153,7 +154,7 @@ extension ERMainViewController: UICollectionViewDelegate {
 
 extension ERMainViewController {
     
-    enum Section {
+    enum Section: CaseIterable {
         case main
     }
 }

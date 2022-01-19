@@ -11,12 +11,7 @@ struct ERListContentConfiguration: UIContentConfiguration, Hashable {
     var file: ERFile?
     
     func makeContentView() -> UIView & UIContentView {
-        let contentVC = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "ERListContentViewController")
-        let contentView = contentVC.view as! ERListContentView
-        contentView.configuration = self
-        
-        return contentView
+        ERListContentView(configuration: self)
     }
     
     func updated(for state: UIConfigurationState) -> Self { self }
