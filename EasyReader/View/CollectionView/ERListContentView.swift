@@ -67,6 +67,6 @@ extension ERListContentView {
             thumbnailImageView.image = thumbnail
         }
         titleLabel.text = configuration.file?.fileName
-        fileTypeLabel.text = configuration.file?.fileType.ext()
+        fileTypeLabel.text = configuration.file?.fileType.fileType()
     }
 }

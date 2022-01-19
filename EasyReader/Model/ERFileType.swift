@@ -16,7 +16,25 @@ enum ERFileType: Hashable, Codable {
     case other(String)
     
     func ext() -> String {
-        String(describing: self)
+        switch self {
+            case .txt:
+                return "txt"
+                
+            case .rtf:
+                return "rtf"
+                
+            case .rtfd:
+                return "rtfd"
+                
+            case .pdf:
+                return "pdf"
+                
+            case .epub:
+                return "epub"
+                
+            case .other(let ext):
+                return ext
+        }
     }
     
     func id() -> String {
@@ -59,7 +77,7 @@ enum ERFileType: Hashable, Codable {
                 return "Electronic Publication"
                 
             case .other(let ext):
-                return "." + ext + "File"
+                return "." + ext + " File"
         }
     }
 }

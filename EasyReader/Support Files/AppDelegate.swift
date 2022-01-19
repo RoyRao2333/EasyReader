@@ -49,8 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var file = FileService.shared.saveFile(inputURL)
         else { return false }
         
-//        logger.info("Got file at:", context: inputURL)
-        
         thumbnail(for: inputURL) { thumbnail in
             if let thumbnail = thumbnail, let jpegData = thumbnail.jpegData(compressionQuality: 100) {
                 file.thumbnail = jpegData

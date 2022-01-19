@@ -214,7 +214,7 @@
         <!--Title-->
         <scene sceneID="Jms-YN-jNH">
             <objects>
-                <viewController storyboardIdentifier="ERPopoverViewController" id="eBG-4z-7FW" customClass="ERPopoverViewController" customModule="EasyReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlainPopoverViewController" id="eBG-4z-7FW" customClass="PlainPopoverViewController" customModule="EasyReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ghu-u7-UDq">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
