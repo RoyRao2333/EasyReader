@@ -9,6 +9,7 @@ import UIKit
 
 struct ERListContentConfiguration: UIContentConfiguration, Hashable {
     var file: ERFile?
+    var thumbnail: UIImage?
     
     func makeContentView() -> UIView & UIContentView {
         ERListContentView(configuration: self)

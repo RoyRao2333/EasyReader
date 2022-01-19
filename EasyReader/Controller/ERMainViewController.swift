@@ -8,23 +8,22 @@
 import UIKit
 import PDFKit
 import UniformTypeIdentifiers
-import QuickLookThumbnailing
 import SnapKit
+import Combine
+import CombineCocoa
+import Defaults
 
 class ERMainViewController: UIViewController {
     private var collectionView: UICollectionView!
     
     private lazy var dataSource = makeDataSource()
+    private var subscribers: Set<AnyCancellable> = []
     
-    private var models: [ERFile] = [
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_1", fileType: .txt, path: ""),
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_2", fileType: .pdf, path: ""),
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_3", fileType: .pdf, path: ""),
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_4", fileType: .txt, path: ""),
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_5", fileType: .epub, path: ""),
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_6", fileType: .rtf, path: ""),
-        ERFile(thumbnail: UIImage(systemName: "paperplane.fill"), fileName: "File_7", fileType: .rtfd, path: ""),
-    ]
+    private var models: Set<ERFile> = [] {
+        didSet {
+            applySnapshot()
+        }
+    }
     
     typealias DataSource = UICollectionViewDiffableDataSource<Section, ERFile>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, ERFile>
@@ -36,13 +35,47 @@ class ERMainViewController: UIViewController {
         title = "Books"
         
         configureCollectionView()
-        applySnapshot()
+        setupPublishers()
     }
 }
 
 
 // MARK: Private Methods -
 extension ERMainViewController {
+    
+    private func setupPublishers() {
+        Defaults
+            .publisher(.storage)
+            .sink { [weak self] in
+                self?.models = $0.newValue
+            }
+            .store(in: &subscribers)
+        
+        FileService.shared.current
+            .sink { [weak self] in
+                guard let url = $0 else { return}
+                
+                self?.presentDocument(at: url)
+//                logger.info("File at:", context: url)
+            }
+            .store(in: &subscribers)
+        
+        collectionView
+            .didSelectItemPublisher
+            .sink { [weak self] in
+                self?.collectionView.deselectItem(at: $0, animated: false)
+            }
+            .store(in: &subscribers)
+        
+        collectionView
+            .didSelectItemPublisher
+            .map { [weak self] in
+                guard let path = (self?.collectionView.cellForItem(at: $0) as? ERListCell)?.file?.path else { return nil }
+                return URL(fileURLWithPath: path)
+            }
+            .assign(to: \.value, on: FileService.shared.current)
+            .store(in: &subscribers)
+    }
     
     private func configureCollectionView() {
         let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
@@ -75,17 +108,21 @@ extension ERMainViewController {
     }
     
     private func applySnapshot(animates: Bool = true) {
-        var snapshot = Snapshot()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(models, toSection: .main)
-        
-        dataSource.apply(snapshot, animatingDifferences: animates)
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else { return }
+            
+            var snapshot = Snapshot()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(Array(weakSelf.models), toSection: .main)
+            
+            weakSelf.dataSource.apply(snapshot, animatingDifferences: animates)
+        }
     }
     
     private func presentDocument(at documentURL: URL) {
-        let type = UTType(filenameExtension: documentURL.pathExtension) ?? .plainText
-        
         let _ = documentURL.startAccessingSecurityScopedResource()
+        
+        let type = UTType(filenameExtension: documentURL.pathExtension) ?? .plainText
         switch type {
             case .pdf:
                 let pdfViewController = PDFViewController.instantiate(withStoryboard: .main)
@@ -112,19 +149,6 @@ extension ERMainViewController {
                 present(documentViewController, animated: true, completion: nil)
         }
         documentURL.stopAccessingSecurityScopedResource()
-    }
-    
-    private func thumbnail(for url: URL, _ completion: @escaping (UIImage?) -> Void) {
-        let request = QLThumbnailGenerator.Request(
-            fileAt: url,
-            size: CGSize(width: 50, height: 50),
-            scale: 1,
-            representationTypes: .lowQualityThumbnail
-        )
-        
-        QLThumbnailGenerator.shared.generateRepresentations(for: request) { thumbnail, _, _ in
-            completion(thumbnail?.uiImage)
-        }
     }
 }
 

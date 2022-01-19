@@ -60,7 +60,12 @@ extension ERListContentView {
         
         currentConfiguration = configuration
         
-        thumbnailImageView.image = configuration.file?.thumbnail
+        if
+            let jpegData = configuration.file?.thumbnail,
+            let thumbnail = UIImage(data: jpegData)
+        {
+            thumbnailImageView.image = thumbnail
+        }
         titleLabel.text = configuration.file?.fileName
         fileTypeLabel.text = configuration.file?.fileType.ext()
     }

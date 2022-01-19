@@ -19,6 +19,7 @@
 		B06D4A2F277EDC42008D10C0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */; };
 		B06D4A30277EDC42008D10C0 /* NumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */; };
 		B07B66AB2797B7F200D38991 /* ERListContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07B66AA2797B7F200D38991 /* ERListContentView.xib */; };
+		B07B66AD2797E77000D38991 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B66AC2797E77000D38991 /* Defaults.swift */; };
 		B08897A6278BDD3700250C48 /* PlainPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */; };
 		B08897A9278C005E00250C48 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = B08897A8278C005E00250C48 /* Defaults */; };
 		B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08897AA278C2B3700250C48 /* PDFViewController.swift */; };
@@ -56,6 +57,7 @@
 		B06D4A2A277EDC42008D10C0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B06D4A2B277EDC42008D10C0 /* NumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberExtension.swift; sourceTree = "<group>"; };
 		B07B66AA2797B7F200D38991 /* ERListContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ERListContentView.xib; sourceTree = "<group>"; };
+		B07B66AC2797E77000D38991 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPopoverViewController.swift; sourceTree = "<group>"; };
 		B08897AA278C2B3700250C48 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B0A093AA27965C1D00848EE4 /* ERFileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERFileType.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */,
 				B0440A1B279542E500C2BE35 /* FileAccess.swift */,
 				B0440A1F279543F300C2BE35 /* MIMEType.swift */,
+				B07B66AC2797E77000D38991 /* Defaults.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				B0440A20279543F300C2BE35 /* MIMEType.swift in Sources */,
 				B0A093DD2796BBF600848EE4 /* ERListContentConfiguration.swift in Sources */,
 				B0A093D82796B7E700848EE4 /* ERFile.swift in Sources */,
+				B07B66AD2797E77000D38991 /* Defaults.swift in Sources */,
 				B06D4A2D277EDC42008D10C0 /* StringExtension.swift in Sources */,
 				B08897A6278BDD3700250C48 /* PlainPopoverViewController.swift in Sources */,
 				B06D4A30277EDC42008D10C0 /* NumberExtension.swift in Sources */,

@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import QuickLookThumbnailing
 import SwiftyBeaver
+import Defaults
 
 let logger = SwiftyBeaver.self
 
@@ -14,7 +16,7 @@ let logger = SwiftyBeaver.self
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private var utilQueue = DispatchQueue.global(qos: .utility)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,7 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open inputURL: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // Ensure the URL is a file URL
-        guard inputURL.isFileURL else { return false }
+        guard
+            inputURL.isFileURL,
+            var file = FileService.shared.saveFile(inputURL)
+        else { return false }
+        
+//        logger.info("Got file at:", context: inputURL)
+        
+        thumbnail(for: inputURL) { thumbnail in
+            if let thumbnail = thumbnail, let jpegData = thumbnail.jpegData(compressionQuality: 100) {
+                file.thumbnail = jpegData
+            }
+            Defaults[.storage].insert(file)
+        }
 
         return true
     }
@@ -57,5 +71,22 @@ extension AppDelegate {
         console.format = "$DHH:mm:ss$d $C$L$c: $M $X"
         
         logger.addDestination(console)
+    }
+    
+    private func thumbnail(for url: URL, _ completion: @escaping (UIImage?) -> Void) {
+        let _ = url.startAccessingSecurityScopedResource()
+        
+        let request = QLThumbnailGenerator.Request(
+            fileAt: url,
+            size: CGSize(width: 50, height: 50),
+            scale: 1,
+            representationTypes: .lowQualityThumbnail
+        )
+        
+        QLThumbnailGenerator.shared.generateRepresentations(for: request) { thumbnail, _, _ in
+            completion(thumbnail?.uiImage)
+            
+            url.stopAccessingSecurityScopedResource()
+        }
     }
 }

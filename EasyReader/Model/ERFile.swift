@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Defaults
 
-struct ERFile: Hashable {
-    var thumbnail: UIImage?
+struct ERFile: Hashable, Codable, DefaultsSerializable {
+    var thumbnail: Data = Data()
     var fileName: String
     var fileType: ERFileType
     let path: String

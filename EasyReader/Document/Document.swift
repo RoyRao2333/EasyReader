@@ -37,13 +37,13 @@ extension Document {
     
     private func contentType(for typeName: String) -> NSAttributedString.DocumentType {
         switch typeName {
-            case ERFileType.rtf.rawValue:
+            case ERFileType.rtf.id():
                 return .rtf
                 
-            case ERFileType.rtfd.rawValue:
+            case ERFileType.rtfd.id():
                 return .rtfd
                 
-            case ERFileType.txt.rawValue:
+            case ERFileType.txt.id():
                 fallthrough
                 
             default:
