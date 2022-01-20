@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupLogger()
+        reloadPathsForItems()
         
         return true
     }
@@ -49,12 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var file = FileService.shared.saveFile(inputURL)
         else { return false }
         
-        logger.info("Saved file at:", context: file.path)
         thumbnail(for: inputURL) { thumbnail in
             if let thumbnail = thumbnail, let jpegData = thumbnail.jpegData(compressionQuality: 100) {
                 file.thumbnail = jpegData
             }
-            Defaults[.storage].insert(file)
+            
+            if !Defaults[.storage].contains(where: { $0.path == file.path }) {
+                Defaults[.storage].append(file)
+            }
         }
 
         return true
@@ -70,6 +73,19 @@ extension AppDelegate {
         console.format = "$DHH:mm:ss$d $C$L$c: $M $X"
         
         logger.addDestination(console)
+    }
+    
+    private func reloadPathsForItems() {
+        guard
+            !Defaults[.storage].isEmpty,
+            let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else { return }
+        
+        Defaults[.storage].indices.forEach {
+            let file = Defaults[.storage][$0]
+            let newURL = documentURL.appendingPathComponent("\(file.fileName).\(file.fileType.ext())", isDirectory: false)
+            Defaults[.storage][$0].path = newURL.path
+        }
     }
     
     private func thumbnail(for url: URL, _ completion: @escaping (UIImage?) -> Void) {

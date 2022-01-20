@@ -264,6 +264,43 @@
             </objects>
             <point key="canvasLocation" x="3300" y="653.52323838080963"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="De6-MV-4Mk">
+            <objects>
+                <viewController storyboardIdentifier="ERListPlaceholderViewController" id="vhl-00-ha5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t57-TO-1pv">
+                        <rect key="frame" x="0.0" y="0.0" width="291" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tray.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-cH-vvS">
+                                <rect key="frame" x="95.5" y="76.5" width="100" height="96.5"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ez2-Wb-7xW"/>
+                                    <constraint firstAttribute="width" constant="100" id="tMH-Zp-6f5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing much to see here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOM-jy-dlB">
+                                <rect key="frame" x="52.5" y="175" width="186.5" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iJ4-Ph-Zpd"/>
+                        <constraints>
+                            <constraint firstItem="LOM-jy-dlB" firstAttribute="centerX" secondItem="iJ4-Ph-Zpd" secondAttribute="centerX" id="6lH-s2-hQk"/>
+                            <constraint firstItem="cmQ-cH-vvS" firstAttribute="centerX" secondItem="iJ4-Ph-Zpd" secondAttribute="centerX" id="can-wO-3gs"/>
+                            <constraint firstItem="cmQ-cH-vvS" firstAttribute="centerY" secondItem="iJ4-Ph-Zpd" secondAttribute="centerY" id="fen-cP-Xpb"/>
+                            <constraint firstItem="LOM-jy-dlB" firstAttribute="top" secondItem="cmQ-cH-vvS" secondAttribute="bottom" id="gBF-yO-ajv"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="291" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dAL-Ea-92b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300" y="1137.0314842578712"/>
+        </scene>
         <!--Title-->
         <scene sceneID="Jms-YN-jNH">
             <objects>
@@ -439,6 +476,7 @@
         <image name="textformat.size" catalog="system" width="128" height="80"/>
         <image name="textformat.size.larger" catalog="system" width="128" height="128"/>
         <image name="textformat.size.smaller" catalog="system" width="128" height="122"/>
+        <image name="tray.fill" catalog="system" width="128" height="88"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

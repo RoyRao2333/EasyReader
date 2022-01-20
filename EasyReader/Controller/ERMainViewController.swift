@@ -20,9 +20,17 @@ class ERMainViewController: UIViewController {
     private lazy var dataSource = makeDataSource()
     private var subscribers: Set<AnyCancellable> = []
     
-    private var models: Set<ERFile> = [] {
+    private var models: [ERFile] = [] {
         didSet {
-            applySnapshot()
+            DispatchQueue.main.async { [weak self] in
+                guard let weakSelf = self else { return }
+                
+                weakSelf.applySnapshot()
+                #warning("Fixme: Placeholder View")
+                weakSelf.models.isEmpty
+                    ? weakSelf.collectionView.showPlaceholder()
+                    : weakSelf.collectionView.removePlaceholder()
+            }
         }
     }
     
@@ -91,7 +99,7 @@ extension ERMainViewController {
                 
                 do {
                     try FileManager.default.removeItem(atPath: file.path)
-                    Defaults[.storage].remove(file)
+                    Defaults[.storage].removeAll { $0.path == file.path }
                     completion(true)
                 } catch {
                     logger.warning("Remove item failed with error:", context: error)
@@ -192,14 +200,12 @@ extension ERMainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard
             let cell = collectionView.cellForItem(at: indexPath) as? ERListCell,
-            let file = cell.file,
-            let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            let path = cell.file?.path
         else { return }
         
         collectionView.deselectItem(at: indexPath, animated: false)
         
-        let newURL = documentURL.appendingPathComponent("\(file.fileName).\(file.fileType.ext())", isDirectory: false)
-        FileService.shared.current.value = newURL
+        FileService.shared.current.value = URL(fileURLWithPath: path)
     }
 }
 

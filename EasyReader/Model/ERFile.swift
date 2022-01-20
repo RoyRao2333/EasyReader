@@ -12,5 +12,5 @@ struct ERFile: Hashable, Codable, DefaultsSerializable {
     var thumbnail: Data = Data()
     var fileName: String
     var fileType: ERFileType
-    let path: String
+    var path: String
 }

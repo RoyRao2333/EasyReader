@@ -8,5 +8,5 @@
 import Defaults
 
 extension Defaults.Keys {
-    static let storage = Key<Set<ERFile>>("storageKey", default: [])
+    static let storage = Key<[ERFile]>("storageKey", default: [])
 }

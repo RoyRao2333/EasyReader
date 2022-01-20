@@ -44,6 +44,7 @@
 		B0ECA791279908750037AA6B /* EPUBKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0ECA790279908750037AA6B /* EPUBKit */; };
 		B0ECA7A9279931090037AA6B /* EPUBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ECA7A8279931090037AA6B /* EPUBPopoverViewController.swift */; };
 		B0ECA7AB279936BB0037AA6B /* ERTocItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ECA7AA279936BB0037AA6B /* ERTocItem.swift */; };
+		B0ECA7B0279960960037AA6B /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ECA7AF279960960037AA6B /* CollectionViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		B0ECA78D2799030E0037AA6B /* TheSwiftProgrammingLanguageSwift55.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheSwiftProgrammingLanguageSwift55.epub; sourceTree = "<group>"; };
 		B0ECA7A8279931090037AA6B /* EPUBPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBPopoverViewController.swift; sourceTree = "<group>"; };
 		B0ECA7AA279936BB0037AA6B /* ERTocItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERTocItem.swift; sourceTree = "<group>"; };
+		B0ECA7AF279960960037AA6B /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				B0440A1B279542E500C2BE35 /* FileAccess.swift */,
 				B0440A1F279543F300C2BE35 /* MIMEType.swift */,
 				B07B66AC2797E77000D38991 /* Defaults.swift */,
+				B0ECA7AF279960960037AA6B /* CollectionViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				B0ECA7AB279936BB0037AA6B /* ERTocItem.swift in Sources */,
 				B0A093D62796AEDE00848EE4 /* ERListCell.swift in Sources */,
 				B06D4A2F277EDC42008D10C0 /* ColorExtension.swift in Sources */,
+				B0ECA7B0279960960037AA6B /* CollectionViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
