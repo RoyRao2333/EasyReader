@@ -55,10 +55,18 @@
 			</array>
 		</dict>
 		<dict>
+			<key>NSExportableTypes</key>
+			<array>
+				<string>org.idpf.epub-container</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>application/epub+zip</string>
+			</array>
 			<key>CFBundleTypeName</key>
 			<string>epub</string>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>

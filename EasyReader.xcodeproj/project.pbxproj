@@ -40,11 +40,13 @@
 		B0A2A8F9277D8F1E00D1C2C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A2A8F7277D8F1E00D1C2C4 /* LaunchScreen.storyboard */; };
 		B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = B0A2A905277DA31F00D1C2C4 /* SwiftyBeaver */; };
 		B0A2A90A277DA4AF00D1C2C4 /* ERError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2A909277DA4AF00D1C2C4 /* ERError.swift */; };
-		C46AC1FD3CC4CB84C8BDEC4B /* Pods_EasyReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B326F7AECD950BC903AAC9 /* Pods_EasyReader.framework */; };
+		B0ECA78E2799030E0037AA6B /* TheSwiftProgrammingLanguageSwift55.epub in Resources */ = {isa = PBXBuildFile; fileRef = B0ECA78D2799030E0037AA6B /* TheSwiftProgrammingLanguageSwift55.epub */; };
+		B0ECA791279908750037AA6B /* EPUBKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0ECA790279908750037AA6B /* EPUBKit */; };
+		B0ECA7A9279931090037AA6B /* EPUBPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ECA7A8279931090037AA6B /* EPUBPopoverViewController.swift */; };
+		B0ECA7AB279936BB0037AA6B /* ERTocItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ECA7AA279936BB0037AA6B /* ERTocItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0568FBF1E4D95C22404BC5F2 /* Pods-EasyReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReader.release.xcconfig"; path = "Target Support Files/Pods-EasyReader/Pods-EasyReader.release.xcconfig"; sourceTree = "<group>"; };
 		B006B6CE277EFECB00092B54 /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardExtension.swift; sourceTree = "<group>"; };
 		B04409F4279507F300C2BE35 /* EPUBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBViewController.swift; sourceTree = "<group>"; };
 		B0440A1B279542E500C2BE35 /* FileAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileAccess.swift; sourceTree = "<group>"; };
@@ -76,8 +78,9 @@
 		B0A2A8F8277D8F1E00D1C2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A2A8FA277D8F1E00D1C2C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A2A909277DA4AF00D1C2C4 /* ERError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERError.swift; sourceTree = "<group>"; };
-		B0B326F7AECD950BC903AAC9 /* Pods_EasyReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB3FEE5C0EB12F5CE0768CA4 /* Pods-EasyReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyReader.debug.xcconfig"; path = "Target Support Files/Pods-EasyReader/Pods-EasyReader.debug.xcconfig"; sourceTree = "<group>"; };
+		B0ECA78D2799030E0037AA6B /* TheSwiftProgrammingLanguageSwift55.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = TheSwiftProgrammingLanguageSwift55.epub; sourceTree = "<group>"; };
+		B0ECA7A8279931090037AA6B /* EPUBPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPUBPopoverViewController.swift; sourceTree = "<group>"; };
+		B0ECA7AA279936BB0037AA6B /* ERTocItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERTocItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,34 +88,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0ECA791279908750037AA6B /* EPUBKit in Frameworks */,
 				B08897AE278C2C4800250C48 /* SnapKit in Frameworks */,
 				B08897A9278C005E00250C48 /* Defaults in Frameworks */,
 				B0A2A906277DA31F00D1C2C4 /* SwiftyBeaver in Frameworks */,
 				B0A093D32796922000848EE4 /* CombineCocoa in Frameworks */,
-				C46AC1FD3CC4CB84C8BDEC4B /* Pods_EasyReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		543C72A3EAA7EC4AD1DA65F1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B0B326F7AECD950BC903AAC9 /* Pods_EasyReader.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5F160C4F6E969162B9B3666E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DB3FEE5C0EB12F5CE0768CA4 /* Pods-EasyReader.debug.xcconfig */,
-				0568FBF1E4D95C22404BC5F2 /* Pods-EasyReader.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B06D4A25277EDC11008D10C0 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +135,7 @@
 		B08897A4278BDCE900250C48 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */,
+				B0ECA7A7279930DF0037AA6B /* Popover */,
 				B0A093AC27965D2D00848EE4 /* ERMainViewController.swift */,
 				B0A2A8EE277D8F1C00D1C2C4 /* DocumentViewController.swift */,
 				B08897AA278C2B3700250C48 /* PDFViewController.swift */,
@@ -189,8 +175,6 @@
 			children = (
 				B0A2A8E9277D8F1C00D1C2C4 /* EasyReader */,
 				B0A2A8E8277D8F1C00D1C2C4 /* Products */,
-				5F160C4F6E969162B9B3666E /* Pods */,
-				543C72A3EAA7EC4AD1DA65F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +208,7 @@
 				B0A2A8F5277D8F1E00D1C2C4 /* Assets.xcassets */,
 				B0A2A8F7277D8F1E00D1C2C4 /* LaunchScreen.storyboard */,
 				B0A2A8FA277D8F1E00D1C2C4 /* Info.plist */,
+				B0ECA78D2799030E0037AA6B /* TheSwiftProgrammingLanguageSwift55.epub */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -244,6 +229,7 @@
 				B0A093D72796B7E700848EE4 /* ERFile.swift */,
 				B0A093AA27965C1D00848EE4 /* ERFileType.swift */,
 				B0A093DC2796BBF600848EE4 /* ERListContentConfiguration.swift */,
+				B0ECA7AA279936BB0037AA6B /* ERTocItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +242,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		B0ECA7A7279930DF0037AA6B /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				B08897A5278BDD3700250C48 /* PlainPopoverViewController.swift */,
+				B0ECA7A8279931090037AA6B /* EPUBPopoverViewController.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,11 +258,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0A2A8FD277D8F1E00D1C2C4 /* Build configuration list for PBXNativeTarget "EasyReader" */;
 			buildPhases = (
-				F8CA8370BF39624FDDA6FF45 /* [CP] Check Pods Manifest.lock */,
 				B0A2A8E3277D8F1C00D1C2C4 /* Sources */,
 				B0A2A8E4277D8F1C00D1C2C4 /* Frameworks */,
 				B0A2A8E5277D8F1C00D1C2C4 /* Resources */,
-				AD1362EFBAA9E585461454A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +272,7 @@
 				B08897A8278C005E00250C48 /* Defaults */,
 				B08897AD278C2C4800250C48 /* SnapKit */,
 				B0A093D22796922000848EE4 /* CombineCocoa */,
+				B0ECA790279908750037AA6B /* EPUBKit */,
 			);
 			productName = EasyReader;
 			productReference = B0A2A8E7277D8F1C00D1C2C4 /* EasyReader.app */;
@@ -313,6 +307,7 @@
 				B08897A7278C005E00250C48 /* XCRemoteSwiftPackageReference "Defaults" */,
 				B08897AC278C2C4800250C48 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B0A093D12796922000848EE4 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				B0ECA78F279908750037AA6B /* XCRemoteSwiftPackageReference "EPUBKit" */,
 			);
 			productRefGroup = B0A2A8E8277D8F1C00D1C2C4 /* Products */;
 			projectDirPath = "";
@@ -331,53 +326,12 @@
 				B0A2A8F9277D8F1E00D1C2C4 /* LaunchScreen.storyboard in Resources */,
 				B0A2A8F6277D8F1E00D1C2C4 /* Assets.xcassets in Resources */,
 				B0A2A8F4277D8F1C00D1C2C4 /* Main.storyboard in Resources */,
+				B0ECA78E2799030E0037AA6B /* TheSwiftProgrammingLanguageSwift55.epub in Resources */,
 				B07B66AB2797B7F200D38991 /* ERListContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AD1362EFBAA9E585461454A6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyReader/Pods-EasyReader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyReader/Pods-EasyReader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyReader/Pods-EasyReader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8CA8370BF39624FDDA6FF45 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyReader-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0A2A8E3277D8F1C00D1C2C4 /* Sources */ = {
@@ -392,6 +346,7 @@
 				B06D4A2C277EDC42008D10C0 /* ViewExtension.swift in Sources */,
 				B0A093AB27965C1D00848EE4 /* ERFileType.swift in Sources */,
 				B0440A222795447B00C2BE35 /* URLExtension.swift in Sources */,
+				B0ECA7A9279931090037AA6B /* EPUBPopoverViewController.swift in Sources */,
 				B08897AB278C2B3700250C48 /* PDFViewController.swift in Sources */,
 				B0440A20279543F300C2BE35 /* MIMEType.swift in Sources */,
 				B0A093DD2796BBF600848EE4 /* ERListContentConfiguration.swift in Sources */,
@@ -407,6 +362,7 @@
 				B06D4A2E277EDC42008D10C0 /* ImageExtension.swift in Sources */,
 				B0440A1C279542E500C2BE35 /* FileAccess.swift in Sources */,
 				B06D4A24277EDA70008D10C0 /* Content.swift in Sources */,
+				B0ECA7AB279936BB0037AA6B /* ERTocItem.swift in Sources */,
 				B0A093D62796AEDE00848EE4 /* ERListCell.swift in Sources */,
 				B06D4A2F277EDC42008D10C0 /* ColorExtension.swift in Sources */,
 			);
@@ -552,7 +508,6 @@
 		};
 		B0A2A8FE277D8F1E00D1C2C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB3FEE5C0EB12F5CE0768CA4 /* Pods-EasyReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -583,7 +538,6 @@
 		};
 		B0A2A8FF277D8F1E00D1C2C4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0568FBF1E4D95C22404BC5F2 /* Pods-EasyReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -668,6 +622,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		B0ECA78F279908750037AA6B /* XCRemoteSwiftPackageReference "EPUBKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/witekbobrowski/EPUBKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -690,6 +652,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B0A2A904277DA31F00D1C2C4 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
 			productName = SwiftyBeaver;
+		};
+		B0ECA790279908750037AA6B /* EPUBKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0ECA78F279908750037AA6B /* XCRemoteSwiftPackageReference "EPUBKit" */;
+			productName = EPUBKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

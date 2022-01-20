@@ -12,6 +12,7 @@ import SnapKit
 import Combine
 import CombineCocoa
 import Defaults
+import EPUBKit
 
 class ERMainViewController: UIViewController {
     private var collectionView: UICollectionView!
@@ -32,10 +33,32 @@ class ERMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Books"
+        title = "Library"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "book.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(openEpub(_:))
+        )
         
         configureCollectionView()
         setupPublishers()
+    }
+}
+
+
+// MARK: Actions -
+extension ERMainViewController {
+    
+    @IBAction private func openEpub(_ sender: UIBarButtonItem) {
+        guard let epubPath = Bundle.main.path(forResource: "TheSwiftProgrammingLanguageSwift55", ofType: "epub") else { return }
+        let epubURL = URL(fileURLWithPath: epubPath)
+        
+        let epubViewController = EPUBViewController.instantiate(withStoryboard: .main)
+        epubViewController.epubDocument = EPUBDocument(url: epubURL)
+        epubViewController.modalPresentationStyle = .fullScreen
+        epubViewController.modalTransitionStyle = .crossDissolve
+        present(epubViewController, animated: true, completion: nil)
     }
 }
 
@@ -53,32 +76,30 @@ extension ERMainViewController {
         
         FileService.shared.current
             .sink { [weak self] in
-                guard let url = $0 else { return}
+                guard let url = $0 else { return }
                 
                 self?.presentDocument(at: url)
-//                logger.info("File at:", context: url)
             }
-            .store(in: &subscribers)
-        
-        collectionView
-            .didSelectItemPublisher
-            .sink { [weak self] in
-                self?.collectionView.deselectItem(at: $0, animated: false)
-            }
-            .store(in: &subscribers)
-        
-        collectionView
-            .didSelectItemPublisher
-            .map { [weak self] in
-                guard let path = (self?.collectionView.cellForItem(at: $0) as? ERListCell)?.file?.path else { return nil }
-                return URL(fileURLWithPath: path)
-            }
-            .assign(to: \.value, on: FileService.shared.current)
             .store(in: &subscribers)
     }
     
     private func configureCollectionView() {
-        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        layoutConfig.trailingSwipeActionsConfigurationProvider = { indexPath in
+            let del = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion in
+                guard let file = (self?.collectionView.cellForItem(at: indexPath) as? ERListCell)?.file else { return }
+                
+                do {
+                    try FileManager.default.removeItem(atPath: file.path)
+                    Defaults[.storage].remove(file)
+                    completion(true)
+                } catch {
+                    logger.warning("Remove item failed with error:", context: error)
+                    completion(false)
+                }
+            }
+            return UISwipeActionsConfiguration(actions: [del])
+        }
         let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: listLayout)
@@ -169,9 +190,16 @@ extension ERMainViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let _ = collectionView.cellForItem(at: indexPath) as? ERListCell else { return }
+        guard
+            let cell = collectionView.cellForItem(at: indexPath) as? ERListCell,
+            let file = cell.file,
+            let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else { return }
         
         collectionView.deselectItem(at: indexPath, animated: false)
+        
+        let newURL = documentURL.appendingPathComponent("\(file.fileName).\(file.fileType.ext())", isDirectory: false)
+        FileService.shared.current.value = newURL
     }
 }
 

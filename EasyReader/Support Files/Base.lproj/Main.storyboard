@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -164,6 +165,37 @@
             </objects>
             <point key="canvasLocation" x="2552.8000000000002" y="653.52323838080963"/>
         </scene>
+        <!--Popover View Controller-->
+        <scene sceneID="YLy-ES-rbU">
+            <objects>
+                <viewController storyboardIdentifier="EPUBPopoverViewController" id="mhT-ss-Vmj" customClass="EPUBPopoverViewController" customModule="EasyReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mdl-ti-QqC">
+                        <rect key="frame" x="0.0" y="0.0" width="277" height="440"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-U5-r5j">
+                                <rect key="frame" x="0.0" y="0.0" width="277" height="440"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i0s-X6-Tme"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T0Z-U5-r5j" firstAttribute="leading" secondItem="i0s-X6-Tme" secondAttribute="leading" id="8Jd-cX-98l"/>
+                            <constraint firstItem="i0s-X6-Tme" firstAttribute="bottom" secondItem="T0Z-U5-r5j" secondAttribute="bottom" id="GH4-1T-Urt"/>
+                            <constraint firstItem="T0Z-U5-r5j" firstAttribute="top" secondItem="i0s-X6-Tme" secondAttribute="top" id="ef1-AJ-AUX"/>
+                            <constraint firstItem="i0s-X6-Tme" firstAttribute="trailing" secondItem="T0Z-U5-r5j" secondAttribute="trailing" id="jau-z3-vGm"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="277" height="440"/>
+                    <connections>
+                        <outlet property="tableView" destination="T0Z-U5-r5j" id="D2u-5e-dAz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXX-Ux-Bkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300" y="40"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="GdF-zT-4gJ">
             <objects>
@@ -183,28 +215,49 @@
                                 <state key="normal" image="chevron.backward" catalog="system"/>
                                 <connections>
                                     <action selector="dismissSelf:" destination="jng-zr-34s" eventType="touchUpInside" id="HvT-oQ-P9a"/>
+                                    <action selector="dismissSelf:" destination="jHp-VY-ptg" eventType="touchUpInside" id="JIx-y3-7gh"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="447-AY-x0c">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrY-w0-56x">
                                 <rect key="frame" x="0.0" y="52" width="375" height="615"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRf-Hd-50T">
+                                <rect key="frame" x="330" y="11" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9zO-7o-x1D"/>
+                                    <constraint firstAttribute="width" constant="30" id="j1h-TQ-HLp"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="list.bullet.circle" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="return2Toc:" destination="jHp-VY-ptg" eventType="touchUpInside" id="W0v-sn-TYI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UCb-vD-uUS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XvW-pv-PDZ" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" constant="15" id="3Ej-1G-neR"/>
                             <constraint firstItem="XvW-pv-PDZ" firstAttribute="top" secondItem="UCb-vD-uUS" secondAttribute="top" constant="15" id="4hY-lu-4Ha"/>
-                            <constraint firstItem="447-AY-x0c" firstAttribute="top" secondItem="XvW-pv-PDZ" secondAttribute="bottom" constant="15" id="8gO-ue-gnF"/>
-                            <constraint firstItem="447-AY-x0c" firstAttribute="trailing" secondItem="UCb-vD-uUS" secondAttribute="trailing" id="Awl-n2-aHT"/>
-                            <constraint firstItem="447-AY-x0c" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" id="Q3E-Yk-80p"/>
-                            <constraint firstItem="447-AY-x0c" firstAttribute="bottom" secondItem="UCb-vD-uUS" secondAttribute="bottom" id="Ux6-iA-28B"/>
+                            <constraint firstItem="UCb-vD-uUS" firstAttribute="bottom" secondItem="UrY-w0-56x" secondAttribute="bottom" id="PkO-ym-NQF"/>
+                            <constraint firstItem="UrY-w0-56x" firstAttribute="top" secondItem="XvW-pv-PDZ" secondAttribute="bottom" constant="15" id="Smb-7s-PCi"/>
+                            <constraint firstItem="UrY-w0-56x" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" id="mJy-LT-zsl"/>
+                            <constraint firstItem="UCb-vD-uUS" firstAttribute="trailing" secondItem="tRf-Hd-50T" secondAttribute="trailing" constant="15" id="oF5-xn-pfB"/>
+                            <constraint firstItem="tRf-Hd-50T" firstAttribute="centerY" secondItem="XvW-pv-PDZ" secondAttribute="centerY" id="tgA-Pd-xQs"/>
+                            <constraint firstItem="UCb-vD-uUS" firstAttribute="trailing" secondItem="UrY-w0-56x" secondAttribute="trailing" id="uGE-ga-GZQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="XvW-pv-PDZ" id="yym-r7-Y97"/>
-                        <outlet property="textView" destination="447-AY-x0c" id="n7l-wc-vf4"/>
+                        <outlet property="webView" destination="UrY-w0-56x" id="5Sd-4p-qad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfH-QE-zFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -351,16 +404,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gh-Ha-v1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853" y="186"/>
+            <point key="canvasLocation" x="1792" y="199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lSR-Yb-b1U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s8X-Pp-yAp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dZ0-Wg-UAZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="dZ0-Wg-UAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -376,6 +435,7 @@
         <image name="arrow.up.and.down.and.arrow.left.and.right" catalog="system" width="128" height="122"/>
         <image name="character.textbox.zh" catalog="system" width="128" height="91"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="list.bullet.circle" catalog="system" width="128" height="121"/>
         <image name="textformat.size" catalog="system" width="128" height="80"/>
         <image name="textformat.size.larger" catalog="system" width="128" height="128"/>
         <image name="textformat.size.smaller" catalog="system" width="128" height="122"/>

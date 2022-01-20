@@ -78,7 +78,9 @@ extension PDFViewController {
 extension PDFViewController {
     
     @IBAction private func dismissSelf(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) { [weak self] in
+            self?.pdfDocument = nil
+        }
     }
 }
 
