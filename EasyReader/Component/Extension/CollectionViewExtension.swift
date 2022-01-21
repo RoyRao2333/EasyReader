@@ -6,25 +6,28 @@
 //
 
 import UIKit
+import SnapKit
 
-extension UICollectionView {
+extension UIView {
     
     func showPlaceholder() {
-        let phView = UIStoryboard(name: "Main", bundle: nil)
+        guard let phView = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "ERListPlaceholderViewController")
             .view
+        else { return }
         
-        phView?.frame = CGRect(
-            x: 0,
-            y: 0,
-            width: self.bounds.size.width,
-            height: self.bounds.size.height
-        )
-        
-        backgroundView = phView
+        phView.tag = 1001
+        addSubview(phView)
+        phView.translatesAutoresizingMaskIntoConstraints = false
+        phView.snp.makeConstraints { make in
+            make.topMargin.equalTo(self.snp.topMargin)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
     }
     
     func removePlaceholder() {
-        backgroundView = nil
+        guard let phView = subviews.filter({ $0.tag == 1001 }).first else { return }
+        
+        phView.removeFromSuperview()
     }
 }

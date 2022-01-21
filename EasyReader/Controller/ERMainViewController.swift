@@ -26,10 +26,13 @@ class ERMainViewController: UIViewController {
                 guard let weakSelf = self else { return }
                 
                 weakSelf.applySnapshot()
-                #warning("Fixme: Placeholder View")
-                weakSelf.models.isEmpty
-                    ? weakSelf.collectionView.showPlaceholder()
-                    : weakSelf.collectionView.removePlaceholder()
+                if weakSelf.models.isEmpty {
+                    weakSelf.collectionView.isHidden = true
+                    weakSelf.view.showPlaceholder()
+                } else {
+                    weakSelf.collectionView.isHidden = false
+                    weakSelf.view.removePlaceholder()
+                }
             }
         }
     }
