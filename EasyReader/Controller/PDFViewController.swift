@@ -12,9 +12,10 @@ import SnapKit
 class PDFViewController: UIViewController {
     @IBOutlet private var backBtn: UIButton!
     @IBOutlet private var directionBtn: UIButton!
-    @IBOutlet private var pdfView: PDFView!
     
     var pdfDocument: PDFDocument?
+    private var pdfView: PDFView!
+    private var thumbnailView: PDFThumbnailView!
     private var directionMenu: UIMenu!
     private var directionMenuItems: [UIAction] = []
     
@@ -38,12 +39,32 @@ class PDFViewController: UIViewController {
 extension PDFViewController {
     
     private func setup() {
+        pdfView = PDFView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         pdfView.backgroundColor = .clear
         pdfView.usePageViewController(true)
         pdfView.autoScales = true
         pdfView.displayDirection = .horizontal
         pdfView.delegate = self
         (pdfView.subviews.first?.subviews.first as? UIScrollView)?.showsHorizontalScrollIndicator = false
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pdfView)
+        pdfView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(backBtn.snp.bottom).offset(15)
+        }
+        
+        thumbnailView = PDFThumbnailView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        thumbnailView.thumbnailSize = CGSize(width: 50, height: 50)
+        thumbnailView.layoutMode = .horizontal
+        thumbnailView.pdfView = pdfView
+        thumbnailView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(thumbnailView)
+        thumbnailView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.snp.bottomMargin)
+            make.height.equalTo(70)
+            make.top.equalTo(pdfView.snp.bottom)
+        }
         
         directionMenuItems = [
             UIAction(

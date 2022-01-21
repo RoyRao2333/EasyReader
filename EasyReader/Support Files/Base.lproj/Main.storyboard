@@ -129,9 +129,6 @@
                                     <action selector="dismissSelf:" destination="jng-zr-34s" eventType="touchUpInside" id="pfK-wl-cgW"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-Bj-mYV" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJI-bl-blm">
                                 <rect key="frame" x="337" y="15" width="23" height="22"/>
                                 <constraints>
@@ -145,20 +142,15 @@
                         <viewLayoutGuide key="safeArea" id="Dz3-Hq-blk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Dz3-Hq-blk" firstAttribute="trailing" secondItem="Rcn-Bj-mYV" secondAttribute="trailing" id="FBc-2z-oRp"/>
                             <constraint firstItem="mZ8-hD-x0O" firstAttribute="top" secondItem="Dz3-Hq-blk" secondAttribute="top" constant="15" id="VPG-rt-mBu"/>
                             <constraint firstItem="QJI-bl-blm" firstAttribute="trailing" secondItem="Oyf-2D-3hI" secondAttribute="trailing" constant="-15" id="XCI-Kb-wOX"/>
-                            <constraint firstItem="Rcn-Bj-mYV" firstAttribute="top" secondItem="mZ8-hD-x0O" secondAttribute="bottom" constant="15" id="aPN-f3-YM1"/>
                             <constraint firstItem="mZ8-hD-x0O" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" constant="15" id="eV0-yn-TEx"/>
                             <constraint firstItem="QJI-bl-blm" firstAttribute="top" secondItem="Dz3-Hq-blk" secondAttribute="top" constant="15" id="koC-PO-SAn"/>
-                            <constraint firstItem="Dz3-Hq-blk" firstAttribute="bottom" secondItem="Rcn-Bj-mYV" secondAttribute="bottom" id="pBT-ea-fdw"/>
-                            <constraint firstItem="Rcn-Bj-mYV" firstAttribute="leading" secondItem="Dz3-Hq-blk" secondAttribute="leading" id="xU3-B4-Rr0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="mZ8-hD-x0O" id="Ifi-u1-3aq"/>
                         <outlet property="directionBtn" destination="QJI-bl-blm" id="Dea-aa-Owa"/>
-                        <outlet property="pdfView" destination="Rcn-Bj-mYV" id="onq-tF-2bf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V34-CT-qSB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

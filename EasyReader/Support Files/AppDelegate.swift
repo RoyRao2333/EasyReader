@@ -81,6 +81,8 @@ extension AppDelegate {
             let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         else { return }
         
+        #warning("[User Defaults] CFPrefsPlistSource<0x2808f5100> (Domain: com.RoyRao.EasyReader, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No): Attempting to store >= 4194304 bytes of data in CFPreferences/NSUserDefaults on this platform is invalid. This is a bug in EasyReader or a library it uses")
+        #warning("[User Defaults] CFPrefsPlistSource<0x2808f5100> (Domain: com.RoyRao.EasyReader, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No): Transitioning into direct mode")
         Defaults[.storage].indices.forEach {
             let file = Defaults[.storage][$0]
             let newURL = documentURL.appendingPathComponent("\(file.fileName).\(file.fileType.ext())", isDirectory: false)
