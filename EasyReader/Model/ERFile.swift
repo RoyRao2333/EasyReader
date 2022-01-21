@@ -9,7 +9,7 @@ import UIKit
 import Defaults
 
 struct ERFile: Hashable, Codable, DefaultsSerializable {
-    var thumbnail: Data = Data()
+    var thumbnailPath: String?
     var fileName: String
     var fileType: ERFileType
     var path: String

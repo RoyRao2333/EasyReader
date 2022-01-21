@@ -61,10 +61,14 @@ extension ERListContentView {
         currentConfiguration = configuration
         
         if
-            let jpegData = configuration.file?.thumbnail,
+            let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first,
+            let fileName = configuration.file?.fileName,
+            let jpegData = try? Data(contentsOf: cacheURL.appendingPathComponent("\(fileName)_thumbnail", isDirectory: false)),
             let thumbnail = UIImage(data: jpegData)
         {
             thumbnailImageView.image = thumbnail
+        } else {
+            logger.warning("Using thumbnail failed")
         }
         titleLabel.text = configuration.file?.fileName
         fileTypeLabel.text = configuration.file?.fileType.fileType()

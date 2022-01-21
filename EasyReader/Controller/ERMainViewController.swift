@@ -97,12 +97,17 @@ extension ERMainViewController {
     private func configureCollectionView() {
         var layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         layoutConfig.trailingSwipeActionsConfigurationProvider = { indexPath in
+            // On Delete
             let del = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion in
                 guard let file = (self?.collectionView.cellForItem(at: indexPath) as? ERListCell)?.file else { return }
                 
                 do {
-                    try FileManager.default.removeItem(atPath: file.path)
                     Defaults[.storage].removeAll { $0.path == file.path }
+                    try FileManager.default.removeItem(atPath: file.path)
+                    if let cacheURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
+                        let thumbnailURL = cacheURL.appendingPathComponent("\(file.fileName)_thumbnail", isDirectory: false)
+                        try FileManager.default.removeItem(at: thumbnailURL)
+                    }
                     completion(true)
                 } catch {
                     logger.warning("Remove item failed with error:", context: error)
