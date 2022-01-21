@@ -11,6 +11,8 @@ import SnapKit
 extension UIView {
     
     func showPlaceholder() {
+        guard subviews.filter({ $0.tag == 1001 }).isEmpty else { return }
+        
         guard let phView = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "ERListPlaceholderViewController")
             .view
