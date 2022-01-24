@@ -210,14 +210,6 @@
                                     <action selector="dismissSelf:" destination="jHp-VY-ptg" eventType="touchUpInside" id="JIx-y3-7gh"/>
                                 </connections>
                             </button>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrY-w0-56x">
-                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRf-Hd-50T">
                                 <rect key="frame" x="330" y="11" width="30" height="30"/>
                                 <constraints>
@@ -239,17 +231,12 @@
                         <constraints>
                             <constraint firstItem="XvW-pv-PDZ" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" constant="15" id="3Ej-1G-neR"/>
                             <constraint firstItem="XvW-pv-PDZ" firstAttribute="top" secondItem="UCb-vD-uUS" secondAttribute="top" constant="15" id="4hY-lu-4Ha"/>
-                            <constraint firstItem="UCb-vD-uUS" firstAttribute="bottom" secondItem="UrY-w0-56x" secondAttribute="bottom" id="PkO-ym-NQF"/>
-                            <constraint firstItem="UrY-w0-56x" firstAttribute="top" secondItem="XvW-pv-PDZ" secondAttribute="bottom" constant="15" id="Smb-7s-PCi"/>
-                            <constraint firstItem="UrY-w0-56x" firstAttribute="leading" secondItem="UCb-vD-uUS" secondAttribute="leading" id="mJy-LT-zsl"/>
                             <constraint firstItem="UCb-vD-uUS" firstAttribute="trailing" secondItem="tRf-Hd-50T" secondAttribute="trailing" constant="15" id="oF5-xn-pfB"/>
                             <constraint firstItem="tRf-Hd-50T" firstAttribute="centerY" secondItem="XvW-pv-PDZ" secondAttribute="centerY" id="tgA-Pd-xQs"/>
-                            <constraint firstItem="UCb-vD-uUS" firstAttribute="trailing" secondItem="UrY-w0-56x" secondAttribute="trailing" id="uGE-ga-GZQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="XvW-pv-PDZ" id="yym-r7-Y97"/>
-                        <outlet property="webView" destination="UrY-w0-56x" id="5Sd-4p-qad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfH-QE-zFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
